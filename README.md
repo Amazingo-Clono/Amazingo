@@ -10,4 +10,5 @@ And other things
 - [ ] Such seite
 ### Teo:
 - [ ] Navbar
+- [ ] Footer
 - [ ] Produktseite
