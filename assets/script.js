@@ -22,15 +22,96 @@ class AmazonNavbar extends HTMLElement {
 
 class AmazonFooter extends HTMLElement {
   static name = "amazon-footer";
+  _footerLinks = [
+    {
+      title: "Ueber Amazon",
+      children: [
+        "Karriere bei Amazon",
+        "Pressemitteilungen",
+        "Erfahre mehr ueber Amazon",
+        "Impressum",
+        "Amazon Science",
+      ]
+    },
+    {
+      title: "Geld verdienen mit Amazon",
+      children: [
+        "Jetzt verkaufen",
+        "Verkaufen mit Amazon Business",
+        "Verkaufen bei Amazon Handmade",
+        "Partnerprogramm",
+        "Versand durch Amazon",
+        "Deine Marke aufbauen und schuetzen",
+        "Prime durch Verkaeufer",
+        "Bewerbe deine Produkte",
+        "Dein Buch mit uns veroeffentlichen",
+        "Amazon Pay",
+        "Hosten eines Amazon Hubs",
+        "Mehr von \"Mit uns Geld verdienen\" anzeigen",
+      ]
+    },
+    {
+      title: "Amazon-Zahlungsarten",
+      children: [
+        "Einkaufen mit Punkten",
+        "Finanzierung von Barclays",
+        "Amazon Business Amex Card",
+        "Gutscheine",
+        "Monatsabrechnung",
+        "Bankeinzug",
+        "Amazon Waehrungsumrechner",
+        "Mein Amazon-Konto aufladen",
+        "Amazon vor Ort aufladen",
+      ]
+    },
+    {
+      title: "Wir helfen dir",
+      children: [
+        "Amazon und Covid-19",
+        "Lieferung verfolgen oder Bestellung anzeigen",
+        "Versand & Verfuegbarkeit",
+        "Amazon Prime",
+        "Rueckgabe & Ersatz",
+        "Recycling (einschliessslich Entsorgung von Elektro- & Elektronikaltgeraeten",
+        "Vertraege kuendigen",
+        "Vodafone-Vertraege kuendigen",
+        "Meine Inhalte und Geraete",
+        "Amazon App",
+        "Kundenservice",
+        "Barrierefreiheit"
+      ]
+    }
+  ]
 
   constructor() {
     self = super();
   }
 
   connectedCallback() {
-    const builder = new ElementBuilder("footer");
-    builder.addChild("button", "btn btn-dark")
-      .setTextContent("Footer");
+    const builder = new ElementBuilder("footer").setClass("w-100");
+    builder
+      .addChild("div", "d-flex justify-content-center")
+      .addChild("a")
+      .setTextContent("Zurueck zum Seitenanfang")
+      .setAttribute("href", "#");
+    const secondFooter = builder
+      .addChild("div", "d-flex justify-content-between container");
+    this._footerLinks.forEach(({ title, children}) => {
+      const wrapping = secondFooter
+        .addChild("div", "container");
+      wrapping
+        .addChild("h2")
+        .setTextContent(title);
+      const list = wrapping
+        .addChild("ul");
+      children.forEach(child =>
+        list
+          .addChild("li")
+          .addChild("a")
+          .setAttribute("href", "#")
+          .setTextContent(child)
+      );
+    });
     builder.attach(self);
   }
 }
@@ -57,6 +138,11 @@ class ElementBuilder {
 
   setTextContent(text) {
     this.element.textContent = text;
+    return this;
+  }
+
+  setInnerHTML(innerHTML) {
+    this.element.innerHTML = innerHTML;
     return this;
   }
 
