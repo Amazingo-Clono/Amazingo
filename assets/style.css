@@ -1,3 +1,7 @@
+body {
+    background-color: lightgrey;
+}
+
 
 #Warenkorb {
     background: grey;
@@ -9,27 +13,31 @@
     margin: auto;
     width: 100%;
     padding: 10px;
-    background: yellow;
+    background: white;
     margin-top: 20px;
+}
+
+.Produktbilder {
+    height: 250px;
 }
 
 #Einkaufswagen {
     width: 80%;
     padding: 10px;
-    background: pink;
+    background: white;
     margin-top: 20px;
 }
 
 #zurKasse {
     width: 200px;
     padding: 10px;
-    background-color: lightblue;
+    background-color: white;
 }
 
 #deineProdukte {
     width: 80%;
     padding: 10px;
-    background: greenyellow;
+    background: white;
 }
 
 
