@@ -1,11 +1,3 @@
-div {
-    background-color: white;
-}
-
-.container {
-    background-color: lightgrey;
-}
-
 #hinweis {
     margin: auto;
     width: 100%;
@@ -47,4 +39,26 @@ div {
 
 .font-14 {
     font-size: 14px;
+}
+
+#backToTop {
+    display: block;
+    font-size: 13px;
+    background-color: rgb(55, 71, 90);
+}
+
+#second-footer {
+    background-color: rgb(35, 47, 62);
+}
+
+#last-footer {
+    background-color: rgb(19, 26, 34);
+}
+
+.text-secondary-amazon {
+    color: rgb(221, 221, 221) !important;
+}
+
+.text-third-amazon {
+    color: rgb(153, 153, 153);
 }

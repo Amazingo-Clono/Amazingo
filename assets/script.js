@@ -18,19 +18,19 @@ class AmazonNavbar extends HTMLElement {
                 Alle
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownCategory">
-                <a class="dropdown-item" href="#">All</a>
+                <a class="dropdown-item" href="#">Alle</a>
                 <a class="dropdown-item" href="#">Smartphone</a>
-                <a class="dropdown-item" href="#">Kitchen Hardware</a>
-                <a class="dropdown-item" href="#">Prime Deals</a>
-                <a class="dropdown-item" href="#">Book</a>
+                <a class="dropdown-item" href="#">Kuechen</a>
+                <a class="dropdown-item" href="#">Prime Angebot</a>
+                <a class="dropdown-item" href="#">Buech</a>
               </div>
             </div>
           </div>
           <input type="text" class="form-control" size="50" name="query" id="query">
           <div class="input-group-append">
-            <button type="submit" class="btn btn-warning">
+            <a href="/search.html" type="submit" class="btn btn-warning">
               <i class="fas fa-search"></i>
-            </button>
+            </a>
           </div>
         </div>
       `)
@@ -85,7 +85,7 @@ class AmazonNavbar extends HTMLElement {
         </a>
         <div class="dropdown-menu px-3" aria-labelledby="userAccount">
           <div class="d-flex flex-column justify-content-center">
-            <a href="login.html" class="btn btn-warning w-75 btn-sm font-weight-bold">Signin</a>
+            <a href="#" class="btn btn-warning w-75 btn-sm font-weight-bold">Login</a>
             <small>New customer?<a href="register.html"> Start here.</a></small>
           </div>
         </div>
@@ -93,7 +93,7 @@ class AmazonNavbar extends HTMLElement {
     const shoppingCart = new ElementBuilder("li")
       .setClass("nav-item px-2")
       .setInnerHTML(`
-        <a class="nav-link" href="#"" aria-disabled=" true">
+        <a class="nav-link" href="/warenkorb.html"" aria-disabled=" true">
           <i class="fas fa-2x text-light fa-shopping-cart"></i>
           <span class="badge badge-warning badge-pill">Einkaufswagen 0</span>
         </a>
@@ -108,7 +108,7 @@ class AmazonNavbar extends HTMLElement {
       .setClass("navbar navbar-expand-lg navbar-dark bg-dark")
       .setAttribute("id", "topOfPage")
       .setInnerHTML(`
-        <a class="navbar-brand pl-2" href="navbar.html">
+        <a class="navbar-brand pl-2" href="/index.html">
           <img src="" height="30" width="100" alt="amazon logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -191,7 +191,15 @@ class AmazonFooter extends HTMLElement {
         "Barrierefreiheit"
       ]
     }
-  ]
+  ];
+  _lastFooterLinks = [{
+
+  }];
+  _lastFooterRechtliches = [
+    "Unsere AGB", "Datenschutzerklärung",
+    "Impressum", "Hinweise zu Cookies",
+    "Hinweise zu interessenbasierter Werbung"
+  ];
 
   constructor() {
     self = super();
@@ -201,15 +209,18 @@ class AmazonFooter extends HTMLElement {
     const builder = new ElementBuilder("footer").setClass("w-100");
     builder
       .setClass("container-fluid bg-dark px-0")
-      .addChild("div", "container")
-      .addChild("a", "btn btn-dark btn-block mb-5")
+      .addChild("a", "btn btn-dark")
+      .setId("backToTop")
       .setAttribute("href", "#topOfPage")
       .setTextContent("Zurueck zum Seitenanfang");
     const secondFooter = builder
-      .addChild("div", "container")
-      .addChild("div", "row text-white mb-5");
+      .addChild("div")
+      .setId("second-footer");
+    const wrapper = secondFooter
+      .addChild("div", "container mt-4")
+      .addChild("div", "row text-white");
     this._footerLinks.forEach(({ title, children}) => {
-      const wrapping = secondFooter
+      const wrapping = wrapper 
         .addChild("div", "col-md-3");
       wrapping
         .addChild("h5")
@@ -219,11 +230,36 @@ class AmazonFooter extends HTMLElement {
       children.forEach(child =>
         list
           .addChild("li")
-          .addChild("a", "text-white text-decoration-none")
+          .addChild("a", "text-secondary-amazon text-decoration-none")
           .setAttribute("href", "#")
           .setTextContent(child)
       );
     });
+    const buttonsWrapper = secondFooter
+      .addChildAndForget("hr", "text-secondary-amazon")
+      .addChild("div", "d-flex flex-row justify-content-center");
+    buttonsWrapper
+      .addChild("btn", "btn btn-outline-secondary text-secondary-amazon my-4")
+      .setTextContent("Deutsch");
+    buttonsWrapper
+      .addChild("btn", "btn btn-outline-secondary text-secondary-amazon my-4")
+      .setTextContent("Deutschland");
+    const lastFooter = builder
+      .addChild("div", "text-third-amazon")
+      .setId("last-footer");
+    lastFooter
+      .addChild("div", "container")
+      .addChild("p")
+      .setTextContent("De ganzen Links");
+    const rechtlichtesWrapper = lastFooter
+      .addChild("div", "container d-flex flex-row justify-content-center")
+    this._lastFooterRechtliches.forEach((text) =>
+      rechtlichtesWrapper
+        .addChild("a", "text-secondary-amazon text-decoration-none font-12 my-2")
+        .setTextContent(text));
+    lastFooter
+      .addChild("div", "container")
+      .setTextContent("Impressum");
     builder.attach(self);
   }
 }
@@ -297,8 +333,11 @@ class ElementBuilder {
   }
 
   setClass(classString) {
-    this.setAttribute("class", classString);
-    return this;
+    return this.setAttribute("class", classString);
+  }
+
+  setId(id) {
+    return this.setAttribute("id", id);
   }
 
   attach(attachingElement) {
