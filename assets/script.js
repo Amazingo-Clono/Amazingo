@@ -6,16 +6,126 @@ class AmazonNavbar extends HTMLElement {
   }
 
   connectedCallback() {
+    const searchbar = new ElementBuilder("form")
+      .setClass("form-inline px-lg-5")
+      .setAttributes(["novalidate", "true"], ["method", "get"])
+      .setInnerHTML(`
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button"
+                id="dropdownCategory" data-toggle="dropdown" aria-expanded="false">
+                Alle
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownCategory">
+                <a class="dropdown-item" href="#">All</a>
+                <a class="dropdown-item" href="#">Smartphone</a>
+                <a class="dropdown-item" href="#">Kitchen Hardware</a>
+                <a class="dropdown-item" href="#">Prime Deals</a>
+                <a class="dropdown-item" href="#">Book</a>
+              </div>
+            </div>
+          </div>
+          <input type="text" class="form-control" size="50" name="query" id="query">
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-warning">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      `)
+    const languageSelection = new ElementBuilder("li")
+      .setClass("nav-item dropdown px-2")
+      .setInnerHTML(`
+        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          DE
+        </a>
+        <div class="dropdown-menu" aria-labelledby="languageDropdown">
+          <form class="p-3">
+            <div class="dropdown-divider"></div>
+            <div class="custom-control custom-radio mb-2">
+              <input class="custom-control-input" type="radio" name="prefLang" id="englishLang" value="english"
+                checked>
+              <label class="custom-control-label" for="englishLang">
+                // TODO: Flag
+              </label>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div class="custom-control custom-radio mb-2">
+              <input class="custom-control-input" type="radio" name="prefLang" id="hindiLang" value="hindi" checked>
+              <label class="custom-control-label" for="hindiLang">
+                // TODO: Flag
+              </label>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div class="custom-control custom-radio mb-2">
+              <input class="custom-control-input" type="radio" name="prefLang" id="urduLang" value="urdu" checked>
+              <label class="custom-control-label" for="urduLang">
+                // TODO: Flag
+              </label>
+            </div>
+            <div class="dropdown-divider"></div>
+            <div class="custom-control custom-radio">
+              <input class="custom-control-input" type="radio" name="prefLang" id="banglaLang" value="bangla" checked>
+              <label class="custom-control-label" for="banglaLang">
+                // TODO: Flag
+              </label>
+            </div>
+            <div class="dropdown-divider"></div>
+          </form>
+        </div>
+      `)
+    const userAccount = new ElementBuilder("li")
+      .setClass("nav-item dropdown px-2")
+      .setInnerHTML(`
+        <a class="nav-link" href="#" id="userAccount" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <display-data title="Hallo, Thomas" subtitle="Konto und Listen"></display-data>
+        </a>
+        <div class="dropdown-menu px-3" aria-labelledby="userAccount">
+          <div class="d-flex flex-column justify-content-center">
+            <a href="login.html" class="btn btn-warning w-75 btn-sm font-weight-bold">Signin</a>
+            <small>New customer?<a href="register.html"> Start here.</a></small>
+          </div>
+        </div>
+    `);
+    const shoppingCart = new ElementBuilder("li")
+      .setClass("nav-item px-2")
+      .setInnerHTML(`
+        <a class="nav-link" href="#"" aria-disabled=" true">
+          <i class="fas fa-2x text-light fa-shopping-cart"></i>
+          <span class="badge badge-warning badge-pill">Einkaufswagen 0</span>
+        </a>
+    `);
+    const navbarText = (title, subtitle) => {
+      return new ElementBuilder("display-data")
+        .setClass("nav-item px-2")
+        .setAttributes([["title", title], ["subtitle", subtitle]]);
+    }
     const builder = new ElementBuilder("nav");
     builder
-      .setClass("navbar navbar-dark bg-dark")
-      .addChild("a", "navbar-brand")
-      .setTextContent("Amazon")
-      .setAttribute("href", "index.html")
-      .addChild("ul", "navbar-nav mr-auto mt-2 mt-lg-0")
-    builder
-      .addChild("button", "btn btn-light")
-      .setTextContent("Don't");
+      .setClass("navbar navbar-expand-lg navbar-dark bg-dark")
+      .setAttribute("id", "topOfPage")
+      .setInnerHTML(`
+        <a class="navbar-brand pl-2" href="navbar.html">
+          <img src="" height="30" width="100" alt="amazon logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            ${navbarText("Lieferung an Thomas", "84082 Laberwein").element.outerHTML}
+            ${searchbar.element.outerHTML}
+            ${languageSelection.element.outerHTML}
+            ${userAccount.element.outerHTML}
+            ${navbarText("Warenruecksendungen", "und Bestellungen").element.outerHTML}
+            ${shoppingCart.element.outerHTML}
+          </ul>
+        </div>`)
     builder.attach(self);
   }
 }
@@ -90,29 +200,54 @@ class AmazonFooter extends HTMLElement {
   connectedCallback() {
     const builder = new ElementBuilder("footer").setClass("w-100");
     builder
-      .addChild("div", "d-flex justify-content-center")
-      .addChild("a")
-      .setTextContent("Zurueck zum Seitenanfang")
-      .setAttribute("href", "#");
+      .setClass("container-fluid bg-dark px-0")
+      .addChild("div", "container")
+      .addChild("a", "btn btn-dark btn-block mb-5")
+      .setAttribute("href", "#topOfPage")
+      .setTextContent("Zurueck zum Seitenanfang");
     const secondFooter = builder
-      .addChild("div", "d-flex justify-content-between container");
+      .addChild("div", "container")
+      .addChild("div", "row text-white mb-5");
     this._footerLinks.forEach(({ title, children}) => {
       const wrapping = secondFooter
-        .addChild("div", "container");
+        .addChild("div", "col-md-3");
       wrapping
-        .addChild("h2")
+        .addChild("h5")
         .setTextContent(title);
       const list = wrapping
-        .addChild("ul");
+        .addChild("ul", "list-unstyled");
       children.forEach(child =>
         list
           .addChild("li")
-          .addChild("a")
+          .addChild("a", "text-white text-decoration-none")
           .setAttribute("href", "#")
           .setTextContent(child)
       );
     });
     builder.attach(self);
+  }
+}
+
+class DisplayData extends HTMLElement {
+  static name = "display-data";
+
+  constructor() {
+    self = super();
+  }
+
+  connectedCallback() {
+    const title = this.getAttribute("title") || "no title";
+    const subtitle = this.getAttribute("subtitle") || "no subtitle";
+
+    const wrapper = new ElementBuilder("a")
+      .setClass("d-flex flex-column");
+    wrapper
+      .addChild("span", "text-secondary font-12")
+      .setTextContent(title);
+    wrapper
+      .addChild("span", "text-white fw-bold font-14")
+      .setTextContent(subtitle);
+    wrapper.attach(self);
   }
 }
 
@@ -129,6 +264,10 @@ class ElementBuilder {
     if (classes)
       builder.setClass(classes);
     return builder;
+  }
+
+  addBuilderAsChild(builder) {
+    return this.addChildAndForget(builder.element);
   }
 
   addChildAndForget(childElement, classes) {
@@ -148,7 +287,7 @@ class ElementBuilder {
 
   setAttributes(attributes) {
     attributes.forEach(([key, value]) =>
-      this.element.setAttribute(key, value));
+      this.setAttribute(key, value));
     return this;
   }
 
@@ -181,5 +320,5 @@ function registerCustomElements(elementClasses) {
 }
 
 (() => {
-  registerCustomElements([AmazonNavbar, AmazonFooter]);
+  registerCustomElements([AmazonNavbar, AmazonFooter, DisplayData]);
 })()
