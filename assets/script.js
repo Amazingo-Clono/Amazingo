@@ -1,5 +1,6 @@
 class AmazonNavbar extends HTMLElement {
   static name = "amazon-navbar";
+  _secondNavbar = ["Angebote", "Gratis Versand", "Gutscheine", "Erneut kaufen", "Geschenkideen", "Amazon Basics", "Amazon Business", "Thomas' Amazon", "Küche, Haushalt & Wohnen", "Browserverlauf", "Drogerie & Körperpflege", "Shopping Tipps", "Baumark"];
 
   constructor() {
     self = super();
@@ -8,32 +9,35 @@ class AmazonNavbar extends HTMLElement {
   connectedCallback() {
     const searchbar = new ElementBuilder("form")
       .setClass("form-inline px-lg-5")
-      .setAttributes(["novalidate", "true"], ["method", "get"])
-      .setInnerHTML(`
+      .setAttributes([
+        ["novalidate", "true"],
+        ["method", "get"],
+        ["style", "min-width: 380px;"]
+      ]).setInnerHTML(`
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button"
+              <button class="btn btn-secondary dropdown-toggle rounded-0 rounded-start" type="button"
                 id="dropdownCategory" data-toggle="dropdown" aria-expanded="false">
                 Alle
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownCategory">
                 <a class="dropdown-item" href="#">Alle</a>
                 <a class="dropdown-item" href="#">Smartphone</a>
-                <a class="dropdown-item" href="#">Kuechen</a>
+                <a class="dropdown-item" href="#">Küchenbedarf</a>
                 <a class="dropdown-item" href="#">Prime Angebot</a>
-                <a class="dropdown-item" href="#">Buech</a>
+                <a class="dropdown-item" href="#">Buch</a>
               </div>
             </div>
           </div>
-          <input type="text" class="form-control" size="50" name="query" id="query">
+          <input type="text" class="form-control" size="50" name="query" id="query" placeholder="Suche Amazon.de">
           <div class="input-group-append">
-            <a href="/search.html" type="submit" class="btn btn-warning">
+            <a href="/search.html" type="submit" class="btn btn-warning rounded-0 rounded-end">
               <i class="fas fa-search"></i>
             </a>
           </div>
         </div>
-      `)
+      `);
     const languageSelection = new ElementBuilder("li")
       .setClass("nav-item dropdown px-2")
       .setInnerHTML(`
@@ -75,9 +79,9 @@ class AmazonNavbar extends HTMLElement {
             <div class="dropdown-divider"></div>
           </form>
         </div>
-      `)
+      `);
     const userAccount = new ElementBuilder("li")
-      .setClass("nav-item dropdown px-2")
+      .setClass("nav-item dropdown px-2 navbar-fixed-height")
       .setInnerHTML(`
         <a class="nav-link" href="#" id="userAccount" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
@@ -91,7 +95,7 @@ class AmazonNavbar extends HTMLElement {
         </div>
     `);
     const shoppingCart = new ElementBuilder("li")
-      .setClass("nav-item px-2")
+      .setClass("nav-item px-2 navbar-fixed-height")
       .setInnerHTML(`
         <a class="nav-link" href="/warenkorb.html"" aria-disabled=" true">
           <i class="fas fa-2x text-light fa-shopping-cart"></i>
@@ -99,12 +103,18 @@ class AmazonNavbar extends HTMLElement {
         </a>
     `);
     const navbarText = (title, subtitle) => {
-      return new ElementBuilder("display-data")
-        .setClass("nav-item px-2")
-        .setAttributes([["title", title], ["subtitle", subtitle]]);
-    }
-    const builder = new ElementBuilder("nav");
-    builder
+      const wrapper = new ElementBuilder("li")
+        .setClass("nav-item nav-link px-2 navbar-fixed-height");
+      wrapper
+        .addChild("display-data")
+        .setAttributes([
+          ["title", title],
+          ["subtitle", subtitle],
+        ]);
+      return wrapper;
+    };
+    const navbarWrapper = new ElementBuilder("div");
+    navbarWrapper.addBuilderAsChild(new ElementBuilder("nav")
       .setClass("navbar navbar-expand-lg navbar-dark bg-dark")
       .setAttribute("id", "topOfPage")
       .setInnerHTML(`
@@ -117,16 +127,30 @@ class AmazonNavbar extends HTMLElement {
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            ${navbarText("Lieferung an Thomas", "84082 Laberwein").element.outerHTML}
+          <ul class="navbar-nav align-items-center">
+            ${
+              navbarText("Lieferung an Thomas", "84082 Laberwein").element
+                .outerHTML
+            }
             ${searchbar.element.outerHTML}
             ${languageSelection.element.outerHTML}
             ${userAccount.element.outerHTML}
-            ${navbarText("Warenruecksendungen", "und Bestellungen").element.outerHTML}
+            ${
+              navbarText("Warenruecksendungen", "und Bestellungen").element
+                .outerHTML
+            }
             ${shoppingCart.element.outerHTML}
           </ul>
-        </div>`)
-    builder.attach(self);
+        </div>`));
+    const secondNavbar = navbarWrapper
+      .addChild("div", "second-footer");
+    this._secondNavbar.forEach((title) =>
+      secondNavbar
+        .addChild("a", "btn text-white")
+        .setAttribute("href", "#")
+        .setTextContent(title)
+    )
+    navbarWrapper.attach(self);
   }
 }
 
@@ -141,7 +165,7 @@ class AmazonFooter extends HTMLElement {
         "Erfahre mehr ueber Amazon",
         "Impressum",
         "Amazon Science",
-      ]
+      ],
     },
     {
       title: "Geld verdienen mit Amazon",
@@ -154,11 +178,11 @@ class AmazonFooter extends HTMLElement {
         "Deine Marke aufbauen und schuetzen",
         "Prime durch Verkaeufer",
         "Bewerbe deine Produkte",
-        "Dein Buch mit uns veroeffentlichen",
+        "Dein Buch mit uns veröffentlichen",
         "Amazon Pay",
         "Hosten eines Amazon Hubs",
-        "Mehr von \"Mit uns Geld verdienen\" anzeigen",
-      ]
+        'Mehr von "Mit uns Geld verdienen" anzeigen',
+      ],
     },
     {
       title: "Amazon-Zahlungsarten",
@@ -172,7 +196,7 @@ class AmazonFooter extends HTMLElement {
         "Amazon Waehrungsumrechner",
         "Mein Amazon-Konto aufladen",
         "Amazon vor Ort aufladen",
-      ]
+      ],
     },
     {
       title: "Wir helfen dir",
@@ -188,17 +212,30 @@ class AmazonFooter extends HTMLElement {
         "Meine Inhalte und Geraete",
         "Amazon App",
         "Kundenservice",
-        "Barrierefreiheit"
-      ]
-    }
+        "Barrierefreiheit",
+      ],
+    },
   ];
-  _lastFooterLinks = [{
-
-  }];
+  _lastFooterLinks = [
+      ["Amazon Advertising", "Kunden finden, gewinnen und binden"],
+      ["Amazon Music", "Streame Millionen von Songs"],
+      ["AbeBooks", "Bücher, Kunst & Sammelobjekte"],
+      ["Amazon Web Services", "Cloud Computing Dienste von Amazon"],
+      ["Audible", "Hörbücher herunterladen"],
+      ["IMDb", "Filme, TV & Stars"],
+      ["Kindle Direct Publishing", "Dein E-Book veröffentlichen"],
+      ["Shopbop", "Designer Modemarken"],
+      ["Amazon Retourenkauf", "Reduzierte B-Ware"],
+      ["ZVAB", "Zentrales Verzeichnis Antiquarischer Bücher und mehr"],
+      ["Amazon Business", "Mengenrabatte, Business-Preise und mehr. Für Unternehmen"],
+      ["", ""], // bootstrap same width only works with even numbers of columns
+  ];
   _lastFooterRechtliches = [
-    "Unsere AGB", "Datenschutzerklärung",
-    "Impressum", "Hinweise zu Cookies",
-    "Hinweise zu interessenbasierter Werbung"
+    "Unsere AGB",
+    "Datenschutzerklärung",
+    "Impressum",
+    "Hinweise zu Cookies",
+    "Hinweise zu interessenbasierter Werbung",
   ];
 
   constructor() {
@@ -206,60 +243,78 @@ class AmazonFooter extends HTMLElement {
   }
 
   connectedCallback() {
-    const builder = new ElementBuilder("footer").setClass("w-100");
+    const builder = new ElementBuilder("footer")
+        .setClass("w-100");
     builder
       .setClass("container-fluid bg-dark px-0")
-      .addChild("a", "btn btn-dark")
+      .addChild("a", "btn btn-dark py-3 rounded-0")
       .setId("backToTop")
       .setAttribute("href", "#topOfPage")
       .setTextContent("Zurueck zum Seitenanfang");
     const secondFooter = builder
-      .addChild("div")
-      .setId("second-footer");
+        .addChild("div")
+        .setClass("second-footer");
     const wrapper = secondFooter
-      .addChild("div", "container mt-4")
+      .addChild("div", "container pt-4")
       .addChild("div", "row text-white");
-    this._footerLinks.forEach(({ title, children}) => {
-      const wrapping = wrapper 
+    this._footerLinks.forEach(({ title, children }) => {
+      const wrapping = wrapper
         .addChild("div", "col-md-3");
       wrapping
         .addChild("h5")
         .setTextContent(title);
       const list = wrapping
         .addChild("ul", "list-unstyled");
-      children.forEach(child =>
+      children.forEach((child) =>
         list
           .addChild("li")
-          .addChild("a", "text-secondary-amazon text-decoration-none")
+          .addChild("a", "text-secondary-amazon text-decoration-none onhover-underlined")
           .setAttribute("href", "#")
           .setTextContent(child)
       );
     });
     const buttonsWrapper = secondFooter
       .addChildAndForget("hr", "text-secondary-amazon")
-      .addChild("div", "d-flex flex-row justify-content-center");
+      .addChild("div", "d-flex flex-row justify-content-center pt-2 pb-5");
     buttonsWrapper
-      .addChild("btn", "btn btn-outline-secondary text-secondary-amazon my-4")
+      .addChild("btn", "btn btn-outline-secondary text-secondary-amazon mx-1")
       .setTextContent("Deutsch");
     buttonsWrapper
-      .addChild("btn", "btn btn-outline-secondary text-secondary-amazon my-4")
+      .addChild("btn", "btn btn-outline-secondary text-secondary-amazon mx-1")
       .setTextContent("Deutschland");
+
     const lastFooter = builder
-      .addChild("div", "text-third-amazon")
+      .addChild("div", "text-third-amazon pt-2")
       .setId("last-footer");
-    lastFooter
-      .addChild("div", "container")
-      .addChild("p")
-      .setTextContent("De ganzen Links");
+    const otherProducts = lastFooter
+      .addChild("div", "container pt-3")
+      .addChild("div", "row");
+    this._lastFooterLinks.forEach(([title, subtitle], index) => {
+      if (index === 6)
+          otherProducts.addChild("div", "w-100");
+      const wrapper = otherProducts
+        .addChild("a", "col text-decoration-none font-12 d-flex flex-column pb-3 onhover-underlined")
+        .setAttribute("href", "#");
+      wrapper
+          .addChild("span", "text-white")
+          .setTextContent(title);
+      wrapper
+          .addChild("span", "text-secondary")
+          .setTextContent(subtitle);
+    });
+
     const rechtlichtesWrapper = lastFooter
-      .addChild("div", "container d-flex flex-row justify-content-center")
+      .addChild("div", "container d-flex flex-row justify-content-center");
     this._lastFooterRechtliches.forEach((text) =>
       rechtlichtesWrapper
-        .addChild("a", "text-secondary-amazon text-decoration-none font-12 my-2")
-        .setTextContent(text));
+        .addChild("a", "text-secondary-amazon text-decoration-none font-12 mt-3 mx-2 onhover-underlined")
+        .setTextContent(text)
+        .setAttribute("href", "#")
+    );
+
     lastFooter
-      .addChild("div", "container")
-      .setTextContent("Impressum");
+      .addChild("div", "container d-flex justify-content-center font-12 text-secondary-amazon pb-4")
+      .setTextContent(`©1996-${new Date().getFullYear()} Amazon.com, Inc. oder Partner-Unternehmen`);
     builder.attach(self);
   }
 }
@@ -276,9 +331,9 @@ class DisplayData extends HTMLElement {
     const subtitle = this.getAttribute("subtitle") || "no subtitle";
 
     const wrapper = new ElementBuilder("a")
-      .setClass("d-flex flex-column");
+      .setClass("text-decoration-none d-flex flex-column");
     wrapper
-      .addChild("span", "text-secondary font-12")
+      .addChild("span", `${title === "Lieferung an Thomas" ? "text-secondary" : "text-white"} font-12`)
       .setTextContent(title);
     wrapper
       .addChild("span", "text-white fw-bold font-14")
@@ -297,13 +352,13 @@ class ElementBuilder {
   addChild(childElement, classes) {
     const builder = new ElementBuilder(childElement);
     this.element.appendChild(builder.element);
-    if (classes)
-      builder.setClass(classes);
+    if (classes) builder.setClass(classes);
     return builder;
   }
 
   addBuilderAsChild(builder) {
-    return this.addChildAndForget(builder.element);
+    this.element.appendChild(builder.element);
+    return this;
   }
 
   addChildAndForget(childElement, classes) {
@@ -322,8 +377,7 @@ class ElementBuilder {
   }
 
   setAttributes(attributes) {
-    attributes.forEach(([key, value]) =>
-      this.setAttribute(key, value));
+    attributes.forEach(([key, value]) => this.setAttribute(key, value));
     return this;
   }
 
@@ -343,21 +397,21 @@ class ElementBuilder {
   attach(attachingElement) {
     if (attachingElement) {
       attachingElement.appendChild(
-        (document
+        document
           .createElement("template")
-          .appendChild(this.element))
-        .cloneNode(true)
+          .appendChild(this.element)
+          .cloneNode(true)
       );
     }
   }
 }
 
 function registerCustomElements(elementClasses) {
-  elementClasses.forEach(cClass => 
+  elementClasses.forEach((cClass) =>
     customElements.define(cClass.name, cClass)
   );
 }
 
 (() => {
   registerCustomElements([AmazonNavbar, AmazonFooter, DisplayData]);
-})()
+})();

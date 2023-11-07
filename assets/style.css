@@ -47,7 +47,7 @@
     background-color: rgb(55, 71, 90);
 }
 
-#second-footer {
+.second-footer {
     background-color: rgb(35, 47, 62);
 }
 
@@ -57,8 +57,25 @@
 
 .text-secondary-amazon {
     color: rgb(221, 221, 221) !important;
+    text-decoration-color: rgb(221, 221, 221) !important;
 }
 
 .text-third-amazon {
     color: rgb(153, 153, 153);
+    text-decoration-color: rgb(153, 153, 153);
+}
+
+.navbar-fixed-height {
+    width: auto;
+    height: 60px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.navbar-bg-color {
+    background-color: #131921;
+}
+
+.onhover-underlined:hover {
+    text-decoration: underline !important;
 }
