@@ -1,12 +1,9 @@
-body {
-    background-color: lightgrey;
+div {
+    background-color: white;
 }
 
-
-#Warenkorb {
-    background: grey;
-    width: 100%;
-    height: 100%;
+.container {
+    background-color: lightgrey;
 }
 
 #hinweis {
@@ -21,10 +18,14 @@ body {
     height: 250px;
 }
 
+.Suche_Produktbilder{
+    width: 100%;
+}
+
 #Einkaufswagen {
     width: 80%;
     padding: 10px;
-    background: white;
+    background-color: white;
     margin-top: 20px;
 }
 
