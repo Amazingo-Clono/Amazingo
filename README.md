@@ -13,3 +13,4 @@ And other things
 - [ ] Navbar
 - [ ] Footer
 - [ ] Produktseite
+- [ ] make navbar sticky!!1 not go with scrolling
