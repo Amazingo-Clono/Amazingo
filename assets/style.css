@@ -34,11 +34,11 @@
 }
 
 .font-12 {
-    font-size: 12px;
+    font-size: 12px !important;
 }
 
 .font-14 {
-    font-size: 14px;
+    font-size: 14px !important;
 }
 
 #backToTop {
@@ -53,6 +53,22 @@
 
 #last-footer {
     background-color: rgb(19, 26, 34);
+}
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 350px;
+    max-width: 350px;
+    height: 100vh;
+    margin-left: -350px;
+    transition: all 0.3s;
+    z-index: 999;
+}
+
+#sidebar.active {
+    margin-left: 0;
 }
 
 .text-secondary-amazon {
