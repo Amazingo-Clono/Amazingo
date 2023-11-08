@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 .container-lg {
@@ -19,6 +20,8 @@
     background-color: white;
 }
 
+=======
+>>>>>>> refs/remotes/origin/main
 #hinweis {
     margin: auto;
     padding: 10px;
@@ -99,3 +102,42 @@
 .orangeLink:hover {
     color: darkorange !important; 
 } 
+
+#backToTop {
+    display: block;
+    font-size: 13px;
+    background-color: rgb(55, 71, 90);
+}
+
+.second-footer {
+    background-color: rgb(35, 47, 62);
+}
+
+#last-footer {
+    background-color: rgb(19, 26, 34);
+}
+
+.text-secondary-amazon {
+    color: rgb(221, 221, 221) !important;
+    text-decoration-color: rgb(221, 221, 221) !important;
+}
+
+.text-third-amazon {
+    color: rgb(153, 153, 153);
+    text-decoration-color: rgb(153, 153, 153);
+}
+
+.navbar-fixed-height {
+    width: auto;
+    height: 60px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.navbar-bg-color {
+    background-color: #131921;
+}
+
+.onhover-underlined:hover {
+    text-decoration: underline !important;
+}
