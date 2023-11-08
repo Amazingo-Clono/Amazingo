@@ -147,3 +147,11 @@
 .Suche_Produktbild{
     width: 95%;
 }
+
+.orangeLink {
+    color: black;
+}
+
+.orangeLink:hover {
+    color: darkorange !important; 
+} 
