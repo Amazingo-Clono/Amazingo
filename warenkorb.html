@@ -7,147 +7,175 @@
     <title>Warenkorb - Amazingo!!!! - The best online shop</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='assets/style.css'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     <script src="assets/script.js" defer></script>
 </head>
 
 <body>
     <amazon-navbar></amazon-navbar>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div id="hinweis">
-                    <h5>Schnell und sicher bezahlen</h5>
-                    <p>Füge Lastschrift als Zahlungsart für eine schnelle und sicher Bezahung hinzu</p>
-                    <button type="button" class="btn btn-outline-dark">Jetzt hinzufügen</button>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-10">
-                <p class="fs-2">Einkaufswagen</p>
-                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-                    href="#">
-                    Auswahl aller Artikel entfernen
-                </a>
-                <div class="row border-bottom border-top">
-                    <div class="col-1 d-flex justify-content-center my-auto">
-                        <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."
-                            checked>
-                    </div>
-                    <div class="col-2">
-                        <img class="Produktbilder" src="Produktbilder/Festplatte.jpeg" alt="Festplatte">
-                    </div>
-                    <div class="col">
-                        <p class="fs-4">Seagate Ironwolf Festplatte</p>
-                        <p class="fs-5 fw-bolder">69,99€</p>
-                        <p class="fs-6 fw-lighter">Auf Lager</p>
-                        <p class="fs-6 fw-lighter">Berechtigt für KOSTENFREIEN Versand</p>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Dies ist ein Geschenk
-                            </label>
+    <div id="test">
+        <div id="width">
+            <div class="row justify-content-center">
+                <div class="col-md-7" id="hinweis">
+                    <div class="row">
+                        <div class="col-2 justify-content-center my-auto">
+                            <img id="SEPA-icon" src="assets/img/SEPA-icon.jpeg" alt="SEPA">
                         </div>
-                        <div class="row">
-                            <div class="col-2">
-                                <select class="form-select" aria-label="Small select example">
-                                    <option selected>Menge: </option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">3</option>
-                                    <option value="5">3</option>
-                                    <option value="6">3</option>
-                                </select>
-                            </div>
-                            <div class="col-1 my-auto text-center">
-                                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-                                    href="#">
-                                    Löschen
-                                </a>
-                            </div>
-                            <div class="col-3 my-auto text-center">
-                                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-                                    href="#">
-                                    Auf die Merkliste
-                                </a>
-                            </div>
-                            <div class="col-3 my-auto text-center">
-                                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-                                    href="#">
-                                    Weitere Artikel wie diese
-                                </a>
-                            </div>
-                            <div class="col-1 my-auto text-center">
-                                <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
-                                    href="#">
-                                    Teilen
-                                </a>
-                            </div>
+                        <div class="col-7">
+                            <h5>Schnell und sicher bezahlen</h5>
+                            <p>Füge Lastschrift als Zahlungsart für eine schnelle und sicher Bezahung hinzu</p>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-1 d-flex justify-content-center my-auto">
-                        <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="..."
-                            checked>
-                    </div>
-                    <div class="col-2">
-                        <img class="Produktbilder" src="Produktbilder/NAS.jpeg" alt="NAS">
-                    </div>
-                    <div class="col">
-                        <h5>Synology NAS ohne Festplatte</h5>
-                        <p>239,45€</p>
-                        <p>Auf Lager</p>
-                        <p>Berechtigt für KOSTENFREIEN Versand</p>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Dies ist ein Geschenk
-                            </label>
-                        </div>
-                        <div class="row">
-                            <div class="col-2">
-                                <select class="form-select" aria-label="Small select example">
-                                    <option selected>Menge: </option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">3</option>
-                                    <option value="5">3</option>
-                                    <option value="6">3</option>
-                                </select>
-                            </div>
-                            <div class="col-1 text-center">
-                                <a href="#" class="text-decoration-none">Löschen</a>
-                            </div>
-                            <div class="col-3 text-center">
-                                <a href="#" class="text-decoration-none">Auf die Merkliste</a>
-                            </div>
-                            <div class="col-3 text-center">
-                                <a href="#" class="text-decoration-none">Weitere Artikel wie diese</a>
-                            </div>
-                            <div class="col-1 text-center">
-                                <a href="#" class="text-decoration-none">Teilen</a>
-                            </div>
+                        <div class="col-3 justify-content-center my-auto">
+                            <button type="button" class="btn btn-outline-dark">Jetzt hinzufügen</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-2">
-                <div id="zurKasse">
-                    <p>Deine Bestellung qualifiziert sich für GRATIS Standardversand. Details</p>
-                    <button type="button" class="btn btn-warning">Zur Kasse gehen</button>
-                </div>
-            </div>
-        </div>
-        <div class="row justify-content-start">
-            <div class="col-10">
-                <div id="deineProdukte">
+            <div class="row justify-content-center" id="Produkte">
+                <div class="col-10 white">
+                    <p class="fs-2">Einkaufswagen</p>
+                    <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                        href="#">
+                        Auswahl aller Artikel entfernen
+                    </a>
+                    <div class="row border-bottom border-top">
+                        <div class="col-1 d-flex justify-content-center my-auto">
+                            <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value=""
+                                aria-label="..." checked>
+                        </div>
+                        <div class="col-2">
+                            <img class="Produktbilder" src="Produktbilder/Festplatte.jpeg" alt="Festplatte">
+                        </div>
+                        <div class="col">
+                            <ul class="list-group">
+                                <li class="list-unstyled">
+                                    <p class="fs-4">Seagate Ironwolf Festplatte</p>
+                                </li>
+                                <li class="list-unstyled">
+                                    <p class="fs-5 fw-bolder">69,99€</p>
+                                </li>
+                                <li class="list-unstyled">
+                                    <p class="fs-6 fw-lighter">Auf Lager</p>
+                                </li>
+                                <li class="list-unstyled">
+                                    <p class="fs-6 fw-lighter">Berechtigt für KOSTENFREIEN Versand</p>
+                                </li>
+                                <li class="list-unstyled">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Dies ist ein Geschenk
+                                        </label>
+                                    </div>
+                                </li>
+                                <li class="list-unstyled">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <select class="form-select" aria-label="Small select example">
+                                                <option selected>Menge: </option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">3</option>
+                                                <option value="5">3</option>
+                                                <option value="6">3</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-1 my-auto text-center">
+                                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                                                href="#">
+                                                Löschen
+                                            </a>
+                                        </div>
+                                        <div class="col-3 my-auto text-center">
+                                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                                                href="#">
+                                                Auf die Merkliste
+                                            </a>
+                                        </div>
+                                        <div class="col-3 my-auto text-center">
+                                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                                                href="#">
+                                                Weitere Artikel wie diese
+                                            </a>
+                                        </div>
+                                        <div class="col-1 my-auto text-center">
+                                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                                                href="#">
+                                                Teilen
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1 d-flex justify-content-center my-auto">
+                            <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value=""
+                                aria-label="..." checked>
+                        </div>
+                        <div class="col-2">
+                            <img class="Produktbilder" src="Produktbilder/NAS.jpeg" alt="NAS">
+                        </div>
+                        <div class="col">
 
+                            <h5>Synology NAS ohne Festplatte</h5>
+                            <p>239,45€</p>
+                            <p>Auf Lager</p>
+                            <p>Berechtigt für KOSTENFREIEN Versand</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Dies ist ein Geschenk
+                                </label>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <select class="form-select" aria-label="Small select example">
+                                        <option selected>Menge: </option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">3</option>
+                                        <option value="5">3</option>
+                                        <option value="6">3</option>
+                                    </select>
+                                </div>
+                                <div class="col-1 text-center">
+                                    <a href="#" class="text-decoration-none">Löschen</a>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <a href="#" class="text-decoration-none">Auf die Merkliste</a>
+                                </div>
+                                <div class="col-3 text-center">
+                                    <a href="#" class="text-decoration-none">Weitere Artikel wie diese</a>
+                                </div>
+                                <div class="col-1 text-center">
+                                    <a href="#" class="text-decoration-none">Teilen</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div id="zurKasse">
+                        <p>Deine Bestellung qualifiziert sich für GRATIS Standardversand. Details</p>
+                        <button type="button" class="btn btn-warning">Zur Kasse gehen</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-start">
+                <div class="col-10 white">
+                    <div id="deineProdukte">
+                        <p class="fw-bolder"> Deine Produkte</p>
+
+                    </div>
                 </div>
             </div>
         </div>
