@@ -1,6 +1,200 @@
 class AmazonNavbar extends HTMLElement {
   static name = "amazon-navbar";
   _secondNavbar = ["Angebote", "Gratis Versand", "Gutscheine", "Erneut kaufen", "Geschenkideen", "Amazon Basics", "Amazon Business", "Thomas' Amazon", "Küche, Haushalt & Wohnen", "Browserverlauf", "Drogerie & Körperpflege", "Shopping Tipps", "Baumark"];
+  _sideBar = [
+    {
+      title: "Im Trend",
+      children: ["Bestseller", "Neuerscheinungen", "Aufsteiger des Tages"]
+    },
+    {
+      title: "Digitale Inhalte & Geraete",
+      subDirs: [{
+        title: "Prime Video",
+        subMenu: [{
+          title: "Prime Video",
+          children: ["Alle Videos", "Shop", "Kostenlos mit Werbung", "Kategorien", "Mein Bereich", "Auf vielen Geraeten verfuegbar"]
+        }]
+      }, {
+        title: "Amazon Music",
+        subMenu: [{
+          title: "Musik Streamen",
+          children: ["Amazon Music Unlimited", "Amazon Music Prime", "Gratis Musik streamen", "Amazon Music Apps", "Meine Musikbibliothek"]
+        }, {
+          title: "Musik Kaufen",
+          children: ["CDs & vinyl"]
+        }]
+      }, {
+        title: "Amazon Appstore",
+        subMenu: [{
+          title: "Amazon Appstore",
+          children: ["Alle Apps und Spiele", "Spiele", "Amazon Coins", "Amazon Apps", "Meine Apps und Abonnements"]
+        }]
+      }, {
+        title: "Amazon Photos",
+        subMenu: [{
+          title: "Amazon Photos",
+          children: ["Amazon Photos", "Amazon Drive", "Lade die kostenlose Apps herunter", "Anmelden"]
+        }]
+      }, {
+        title: "Echo & Alexa",
+        subMenu: [{
+          title: "Echo-Geraete",
+          children: ["Alle Geraete mit Alexa anzeigen", "Echo - Intelligente Lautsprecher", "Echo mit Bildschirm", "Alexa fuer unterwegs"]
+        }, {
+          title: "Haussicherheit & Konnektivitaet",
+          children: ["Haussicherheit von Amazon", "Ring und Bink Kameras", "Ring und Blink Tuerklingen", "Ring Alarm Systeme"]
+        }, {
+          title: "Alexa & Smart Home",
+          children: ["Smarte Beleuchtung und Steckdosen", "eero WLAN Mesh", "Zertifizerit fuer Menschen"]
+        }, {
+          title: "Mehr Inhalte",
+          children: ["Alexa kennenlerne", "Datenschutzportal fuer Alexa", "Alexa App", "Alexa integrierte Gerate", "Amazon Music Unlimited", "Audible Hoerbuecher"]
+        }]
+      }, {
+        title: "Fire TV",
+        subMenu: [{
+          title: "Video- und Spielespass",
+          children: ["Alle Fire TV-Geraete", "Streaming-Geraete", "Fire TV Smart-TVs", "Zubehoer"]
+        }, {
+          title: "Filme, Serien und Mehr",
+          children: ["Prime Video - Enthalten in Prime", "Prime Video - Alle Videos", "Apps & SPiele fuer Fire TV", "Amazon Photos"]
+        }]
+      }, {
+        title: "Fire-Tablets",
+        subMenu: [{
+          title: "Fire-Tablets",
+          children: ["Alle Fire-Tablets", "Fire-Tablets", "Fire-Tablets fuer Kinder", "Zubehoer"]
+        }, {
+          title: "Inhalte Und Verwaltung",
+          children: ["Prime Video", "Apps & Spiele", "Musik-Downloads", "Kindle eBooks", "Newsstand", "Audible Hoerbuecher", "Amazon Kids+", "Meine Inhalte und Geraete"]
+        }]
+      }, {
+        title: "Kindle eReader & Buecher",
+        subMenu: [{
+          title: "Kindle Ereader",
+          children: ["Alle Kindle eReader", "Kindle eReader", "Kindle Kids Edition", "Zubehoer"]
+        }, {
+          title: "Kindle-Shop",
+          children: ["Kindle eBooks", "Englische eBooks", "Kindle Unlimited", "Prime Reading", "Newsstand"]
+        }, {
+          title: "Inhalte und Verwaltung",
+          children: ["Gratis Kindle Lese-Apps", "Kindle Cloud Reader", "Meine Inhalte und Geraete"]
+        }]
+      }, {
+        title: "Audible Hoerbuecher",
+        subMenu: [{
+          title: "Audible Hoerbuecher",
+          children: ["Audible Abo", "Alle Audible Hoerbuecher", "Bestseller", "Neuerscheinungen", "Sachbuecher"]
+        }]
+      }]
+    },
+    {
+      title: "Alle Kategorien",
+      subDirs: [{
+        title: "Buecher",
+        subMenu: [{
+          title: "Buecher",
+          children: ["Alle Buecher", "Kindle eBooks", "Kindle Unlimited", "Prime Reading", "Fremdsprachige Buecher", "Fachbuecher", "Schulbuecher & Lernhilfen", "Hoerbuecher"]
+        }, {
+          title: "Audible Hoerbuecher",
+          children: ["Audbile-Abo", "Alle Audbile Hoerbuecher", "Whispersync for Voice"]
+        }]
+      }, {
+        title: "Filme, Serien, Musik & Games",
+        subMenu: [{
+          title: "Filme, Serien, Musik & Games",
+          children: ["Prime Video - Alle Videos", "Ale DVDs & Blu-rays", "Serien auf DVD & Blu-ray", "Blu-ray-Shop", "Musik-CDs & Vinyl", "Klassische Musik", "Musik-Downloads", "Musikinstrumente & DJ-Equipment", "Games"]
+        }]
+      }, {
+        title: "Moebel, Haushalt, Tier & Baumarkt",
+        subMenu: [{
+          title: "Elektronik & Foto",
+          children: ["Kamera & Foto", "Smartphones & Zubehoer", "TV, Fernseher & Heimkino", "Audio & HiFi", "Musikinstrumente & DJ-Equipment", "Navigation", "Elektronik-Zubehoer", "Konsolen & Games-Zubehoer", "Kuechen- & Haushaltsgeraete", "Elektro-Grossgeraete", "Alle Produkte"]
+        }]
+      }],
+      more: [{
+        title: "Kosmetik, Drogerie & Lebensmittel", 
+        subMenu: [{
+          title: "Computer & Buero",
+          children: ["Laptops", "Tablets", "Computer-Zubehoer", "PC-Komponenten", "Software", "PC- & Video-Games", "Drucker & Tintenpatronen", "Buerobedarf & Schreibwaren"]
+        }]
+      }, { 
+        title: "Spielzeug & Baby",
+        subMenu: [{
+          title: "Spielzeug & Baby",
+          children: ["Spielzeug", "Baby", "Babykleidung & Babyschuhe", "Brettspiele", "Baby-Wunschliste"]
+        }]
+      }, {
+        title: "Bekleidung, Schuhe, Schmuck und Accessoires",
+        subMenu: [{
+          title: "Bekleidung, Schuhe, Schmuck Und Accessoires",
+          children: ["Amazon Fashion", "Damen", "Herren", "Maedchen", "Jungen", "Baby", "Koffern, Rucksaecke & Taschen"]
+        }, {
+          title: "Mehr Entdecken",
+          children: ["The Drop", "Fashion-Angebote", "Prime Erst probieren, dann zahlen", "Kundenfavoriten"]
+        }]
+      }, {
+        title: "Sport & Freizeit",
+        subMenu: [{
+          title: "Sport & Freizeit",
+          children: ["Alle Sport-Produkte", "Fanshop", "Camping & Outdoor", "Fitness", "Fussball", "Radsport", "Running", "Sportelektronik", "Sportbekleidung", "Sportschuhe"]
+        }]
+      }, {
+        title: "Auto, Motorrad & Gewerbe",
+        subMenu: [{
+          title: "Auto, Motorrad & Gewerbe",
+          children: ["Alles in Gewerbe, Industrie & Wissenschaft", "Labor", "Reinigung", "Sicherheit"]
+        }, {
+          title: "Auto & Motorrad",
+          children: ["Autoteile & -zubehoer", "Werkzeug & Wartung", "Motorrad", "Navigation & Car-Hi-Fi"]
+        }]
+      }]
+    },
+    {
+      title: "Programme & Funktionen",
+      subDirs: [{
+        title: "Handmade & Amazon Launchpad",
+        subMenu: [{
+          title: "Handmade",
+          children: ["Alle Handmade-Produkte", "Geschenke", "Schmuck", "Kueche, Haushalt & Wohnen", "Hochzeit", "Bekleidung, Schuhe & Accessoires", "Schreibwaren & Partybedarf", "Baby", "Spielzeug & Spiele", "Made in Italy"]
+        }, {
+          title: "Kontaktieren Sie Uns",
+          children: ["Du erstellst Produkte in Handarbeit"]
+        }, {
+          title: "Amazon Launchpad",
+          children: ["Alle Produkte aus Amazon Launchpad", "Elektronik & Gadgets", "Sport & Outdoor"]
+        }]
+      }],
+      children: ["Luxury Stores", "Amazon Outlet", "Geschenke & Wunschzettel"],
+      more: [{
+        title: "Kleine Unternehmen",
+        subMenu: {
+          title: "Kleine Unternehmen",
+          children: ["Produkte von kleinen Unternehmen", "Kleine Unternehmen kennenlernen", "Deutsche Produkte entdecken", "Oesterreichische Produkte entdecken", "Die Hoehle der Loewen"]
+        },
+      }, {
+        title: "Amazon Business",
+        subMenu: {
+          title: "Amazon Business",
+          children: ["Amazon fuer Unternehmen"]
+        }
+      }, {
+        title: "Amazon Custom"
+      }, {
+        title: "Prime Erst probieren, dann zahlen"
+      }, {
+        title: "Kundenfavoriten"
+      }, {
+        title: "Amazon Second Change"
+      }, {
+        title: "Climate Pledge Friendly"
+      }]
+    },
+    {
+      title: "Hilfe & Einstellungen",
+      children: ["Mein Konto", "Deutsch", "Deutschland", "Waehrungseinstellungen", "Kundenservice", "Anmelden"]
+    }
+  ]
 
   constructor() {
     self = super();
@@ -32,7 +226,7 @@ class AmazonNavbar extends HTMLElement {
           </div>
           <input type="text" class="form-control" size="50" name="query" id="query" placeholder="Suche Amazon.de">
           <div class="input-group-append">
-            <a href="/search.html" type="submit" class="btn btn-warning rounded-0 rounded-end">
+            <a href="search.html" type="submit" class="btn btn-warning rounded-0 rounded-end">
               <i class="fas fa-search"></i>
             </a>
           </div>
@@ -97,7 +291,7 @@ class AmazonNavbar extends HTMLElement {
     const shoppingCart = new ElementBuilder("li")
       .setClass("nav-item px-2 navbar-fixed-height")
       .setInnerHTML(`
-        <a class="nav-link" href="/warenkorb.html"" aria-disabled=" true">
+        <a class="nav-link" href="warenkorb.html"" aria-disabled=" true">
           <i class="fas fa-2x text-light fa-shopping-cart"></i>
           <span class="badge badge-warning badge-pill">Einkaufswagen 0</span>
         </a>
@@ -113,12 +307,53 @@ class AmazonNavbar extends HTMLElement {
         ]);
       return wrapper;
     };
+    const sideBar = new ElementBuilder("nav")
+      .setClass("bg-white")
+      .setId("sidebar");
+    sideBar
+      .addChild("div", "second-footer container py-2 px-4 text-white")
+      .setAttribute("style", "font-size: 19px;")
+      .setId("sidebarHeader")
+      .addChildAndForget("i", "fas fa-circle-user")
+      .addChild("span", "fw-bold ms-2")
+      .setAttribute("style", "font-size: 20px;")
+      .setTextContent("Hallo, anmelden");
+    const sideBarContent = sideBar
+      .addChild("div", "overflow-scroll h-100");
+    const subMenu = ({title, children, subDirs, more}) => {
+      sideBarContent
+        .addChildAndForget("hr")
+        .addChild("h6", "container fw-bold ms-3")
+        .setTextContent(title);
+      const addLink = (text, subMenu) => {
+        const link = sideBarContent
+          .addChild("div", "w-90 font-14")
+          .addChild("a", "text-black text-decoration-none text-start")
+          .setAttribute("href", "#")
+          .addChild("div", "d-flex flex-row justify-content-between")
+          .setTextContent(text);
+        if (subMenu)
+          link.addChild("i", "fas fa-angle-right");
+      };
+      if (subDirs)
+        subDirs.forEach(({title}) => addLink(title, true));
+      if (children)
+        children.forEach((text) => addLink(text, false));
+      if (more) {
+        sideBarContent.addChild("hr");
+        more.forEach(({title, subMenu}) => addLink(title, !!subMenu));
+      }
+    }
+
+    this._sideBar.forEach((stuff) => {
+      subMenu(stuff);
+    });
     const navbarWrapper = new ElementBuilder("div");
     navbarWrapper.addBuilderAsChild(new ElementBuilder("nav")
       .setClass("navbar navbar-expand-lg navbar-dark bg-dark")
       .setAttribute("id", "topOfPage")
       .setInnerHTML(`
-        <a class="navbar-brand pl-2" href="/index.html">
+        <a class="navbar-brand pl-2" href="index.html">
           <img src="" height="30" width="100" alt="amazon logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -143,13 +378,23 @@ class AmazonNavbar extends HTMLElement {
           </ul>
         </div>`));
     const secondNavbar = navbarWrapper
-      .addChild("div", "second-footer");
+      .addChild("div", "second-footer d-flex flex-row")
+      .setAttribute("style", "flex-wrap: nowrap; overflow: hidden;height: auto;")
+    secondNavbar
+      .setId("toggle-button")
+      .addChild("button", "btn text-white font-12 text-nowrap fw-bold")
+      .setAttributes([["type", "button"], ["id", "sidebarCollapse"], ["onclick", "document.getElementById('sidebar').classList.toggle('active')"]])
+      .addChildAndForget("i", "fas fa-align-left me-2")
+      .addChild("span")
+      .setTextContent("Alle");
     this._secondNavbar.forEach((title) =>
       secondNavbar
-        .addChild("a", "btn text-white")
+        .addChild("a", "btn text-white font-12 text-nowrap")
+        .setAttribute("style", "min-width: min-content;")
         .setAttribute("href", "#")
         .setTextContent(title)
     )
+    navbarWrapper.addBuilderAsChild(sideBar);
     navbarWrapper.attach(self);
   }
 }
