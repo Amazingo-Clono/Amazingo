@@ -17,8 +17,8 @@
 </head>
 
 <body>
-    <div class="row" id="page">
-        <div class="col pe-0">
+    <div class="parent">
+        <div class="leftdiv pe-0">
             <amazon-navbar></amazon-navbar>
             <div class="row top-row">
                 <div class="col">
@@ -415,28 +415,29 @@
             </div>
             <amazon-footer></amazon-footer>
         </div>
-        <div class="border" id="Einkaufswagen_seite">
-            <div class="row ">
-                <p class="text-center font-11 p-0 m-0 mt-3">Zwischensumme</p>
-                <p class="text-center fw-bolder text-danger mb-0 mt-0">224,99€</p>
-                <p class="text-center font-11 text-success p-0 m-1">Deine Bestellung qualifiziert sich für GRATIS
+        <div class="rightdiv border p-3">
+            <div class="row">
+                <p class="text-center font-12 mt-3">Zwischensumme</p>
+                <p class="text-center fw-bolder text-danger mb-0 mt-0">298,99€</p>
+                <p class="text-center font-11 text-success ">Deine Bestellung qualifiziert sich für GRATIS
                     Standardversand.
                     Details</p>
-                <a href="warenkorb.html" class="btn btn-outline-dark font-11 p-0 m-1" tabindex="-1" role="button">Zum
+                <a href="warenkorb.html" class="btn btn-outline-dark p-1" tabindex="-1" role="button"
+                    style="width: 100%; font-size: 11px;">Zum
                     Einkaufswagen</a>
             </div>
             <div class="row Produkt_Einkaufswagen_seite border-top mt-2">
                 <img class="Produktbilder_Seitenleiste" src="Produktbilder/Festplatte.jpeg" alt="Festplatte">
                 <p class="text-center">69,99€</p>
-                <div class="col-6 p-0 m-1 align-items-center">
-                    <select class="form-select form-select-sm dropdown_sidebar font-11 p-0" aria-label="Menge:">
+                <div class="col-6 align-items-center">
+                    <select class="form-select form-select-sm font-14 p-1" aria-label="Menge:" style="width: 50px;">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="3">4</option>
                     </select>
                 </div>
-                <div class="col-4 p-0 m-1 align-items-center">
+                <div class="col-4 align-items-center">
                     <button type="button" class="btn btn-light btn-sm">
                         <i class="fa-sharp fa-regular fa-trash" style="color: #000000;"></i>
                     </button>
@@ -444,22 +445,21 @@
             </div>
             <div class="row Produkt_Einkaufswagen_seite border-top border-bottom mt-2">
                 <img class="Produktbilder_Seitenleiste" src="Produktbilder/NAS.jpeg" alt="Festplatte">
-                <p class="text-center">69,99€</p>
-                <div class="col-6 p-0 m-1 align-items-center">
-                    <select class="form-select form-select-sm dropdown_sidebar font-11 p-0" aria-label="Menge:">
+                <p class="text-center">229,00€</p>
+                <div class="col-6 align-items-center">
+                    <select class="form-select form-select-sm font-14 p-1" aria-label="Menge:" style="width: 50px;">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="3">4</option>
                     </select>
                 </div>
-                <div class="col-4 p-0 m-1 align-items-center">
-                    <button type="button" class="btn btn-light btn-sm">
+                <div class="col-4 align-items-center">
+                    <button type="button" class="btn btn-light btn-sm mb-2">
                         <i class="fa-sharp fa-regular fa-trash" style="color: #000000;"></i>
                     </button>
                 </div>
             </div>
-
         </div>
     </div>
 </body>

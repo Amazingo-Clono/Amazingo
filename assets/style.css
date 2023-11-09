@@ -1,18 +1,12 @@
 
-#page {
-    min-width: 1000px !important;
-}
 
 .container-lg {
     width: 200%;
 }
 
-#test {
-    background-color: whitesmoke;
-}
 
-#width {
-    width: 88%;
+#width_warenkorb {
+    width: 88% !important;
     margin: auto;
     max-width: 1500px;
     min-width: 1000px;
@@ -80,11 +74,6 @@
     height: 40px;
 }
 
-.Produkt {
-    max-width: 600px;
-    min-width: 200px;
-}
-
 .Produktbild-hoehe {
     height: 250px;
     display: flex;
@@ -94,7 +83,7 @@
 
 .Suche_Produktbild{
     width: 90%;
-    max-height: 250px;
+    max-height: 230px;
 }
 
 .orangeLink {
@@ -104,10 +93,6 @@
 .orangeLink:hover {
     color: darkorange !important; 
 } 
-
-#Einkaufswagen_seite {
-    width: 140px !important;
-}
 
 #backToTop {
     display: block;
@@ -164,12 +149,6 @@
     text-decoration: underline !important;
 }
 
-
-.dropdown_sidebar {
-    width: 100% !important;
-    height: 30px;
-}
-
 .dropdown_Stars {
     position: relative;
     display: inline-block;
@@ -189,3 +168,15 @@
     display: block;
 }
 
+.parent {
+    display: flex;
+    min-width: 900px;
+}
+
+.leftdiv {
+    overflow: hidden;
+}
+
+.rightdiv {
+    float: right;
+}
