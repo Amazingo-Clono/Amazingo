@@ -1,17 +1,37 @@
+.container-lg {
+    width: 200%;
+}
+
+#test {
+    background-color: whitesmoke;
+}
+
+#width {
+    width: 88%;
+    margin: auto;
+    max-width: 1500px;
+    min-width: 1000px;
+}
+
+.white {
+    background-color: white;
+}
+
 #hinweis {
     margin: auto;
-    width: 100%;
     padding: 10px;
     background: white;
     margin-top: 20px;
+    height: 5%;
 }
 
 .Produktbilder {
     height: 250px;
 }
 
-.Suche_Produktbilder{
-    width: 100%;
+#Produkte {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #Einkaufswagen {
@@ -22,7 +42,6 @@
 }
 
 #zurKasse {
-    width: 200px;
     padding: 10px;
     background-color: white;
 }
@@ -31,6 +50,9 @@
     width: 80%;
     padding: 10px;
     background: white;
+}
+#SEPA-icon {
+    width: 90%;
 }
 
 .font-12 {
@@ -96,4 +118,32 @@
 
 .onhover-underlined:hover {
     text-decoration: underline !important;
+}
+
+.stars {
+    width: 20px;
+}
+
+.top-row {
+    height: 20px;
+}
+
+.Energieeffizienz {
+    height: 40px;
+}
+
+.Produkt {
+    max-width: 400px;
+    min-width: 200px;
+}
+
+.Produktbild-hoehe {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Suche_Produktbild{
+    width: 95%;
 }
