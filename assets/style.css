@@ -94,6 +94,7 @@
 
 .Suche_Produktbild{
     width: 90%;
+    max-height: 250px;
 }
 
 .orangeLink {
