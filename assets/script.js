@@ -1,3 +1,19 @@
+const langRadio = (text, id, checked) => {
+  const div = new ElementBuilder("div")
+    .setClass("custom-control custom-radio mb-2");
+  const input = div
+    .addChild("input", "custom-control-input")
+    .setAttribute("type", "radio")
+    .setAttribute("name", "radioLang")
+    .setId(id);
+  if (checked)
+    input.setAttribute("checked", true)
+  div
+    .addChild("label", "custom-control-label ms-2 onhover-underlined onhover-orange")
+    .setAttribute("for", id)
+    .setTextContent(text);
+  return div.element.outerHTML;
+}
 class AmazonNavbar extends HTMLElement {
   static name = "amazon-navbar";
   _secondNavbar = ["Angebote", "Gratis Versand", "Gutscheine", "Erneut kaufen", "Geschenkideen", "Amazon Basics", "Amazon Business", "Thomas' Amazon", "Küche, Haushalt & Wohnen", "Browserverlauf", "Drogerie & Körperpflege", "Shopping Tipps", "Baumark"];
@@ -195,6 +211,9 @@ class AmazonNavbar extends HTMLElement {
       children: ["Mein Konto", "Deutsch", "Deutschland", "Waehrungseinstellungen", "Kundenservice", "Anmelden"]
     }
   ]
+  _userAccLink = [
+    "Mein Konto", "Meine Bestellungen", "Wunschzettel", "Weiter einkaufen", "Empfehlungen", "Spar-Abo verwalten", "Meine Haustiere", "Meine Mitgliedschaften und Abonnements", "Meine Prime-Mitgliedschaft", "Meine Inhalte und Geraete", "Meine Prime Music", "Meine Musikbibliothek", "Mein Amazon Drive", "Mein Prime Video", "Mein Kindle Unlimited", "Meine Watchlist", "Meine gekauften und geliehenden Videos", "Meine Games- & Software-- Bibliothek", "Meine Apps & Geraete", "Kostenloses Unternehmenskonto erstellen"
+  ]
 
   constructor() {
     self = super();
@@ -212,10 +231,10 @@ class AmazonNavbar extends HTMLElement {
           <div class="input-group-prepend">
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle rounded-0 rounded-start" type="button"
-                id="dropdownCategory" data-toggle="dropdown" aria-expanded="false">
+                data-bs-toggle="dropdown" aria-expanded="false">
                 Alle
               </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownCategory">
+              <div class="dropdown-menu">
                 <a class="dropdown-item" href="#">Alle</a>
                 <a class="dropdown-item" href="#">Smartphone</a>
                 <a class="dropdown-item" href="#">Küchenbedarf</a>
@@ -233,58 +252,86 @@ class AmazonNavbar extends HTMLElement {
         </div>
       `);
     const languageSelection = new ElementBuilder("li")
-      .setClass("nav-item dropdown px-2")
+      .setClass("nav-item dropdown onhover-dropdown px-2")
       .setInnerHTML(`
-        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown"
+        <a class="nav-link dropdown-toggle text-white" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           DE
         </a>
-        <div class="dropdown-menu" aria-labelledby="languageDropdown">
-          <form class="p-3">
+        <div class="dropdown-menu font-12 p-3" aria-labelledby="languageDropdown">
+          <div>
+            <span>Sprache aendern</span> <blue-link class="font-10" text="Weitere Informationen"></blue-link>
+          </div>
+          <form>
+            ${langRadio("Deutsch - DE", "germanLang", true)}
             <div class="dropdown-divider"></div>
-            <div class="custom-control custom-radio mb-2">
-              <input class="custom-control-input" type="radio" name="prefLang" id="englishLang" value="english"
-                checked>
-              <label class="custom-control-label" for="englishLang">
-                // TODO: Flag
-              </label>
-            </div>
-            <div class="dropdown-divider"></div>
-            <div class="custom-control custom-radio mb-2">
-              <input class="custom-control-input" type="radio" name="prefLang" id="hindiLang" value="hindi" checked>
-              <label class="custom-control-label" for="hindiLang">
-                // TODO: Flag
-              </label>
-            </div>
-            <div class="dropdown-divider"></div>
-            <div class="custom-control custom-radio mb-2">
-              <input class="custom-control-input" type="radio" name="prefLang" id="urduLang" value="urdu" checked>
-              <label class="custom-control-label" for="urduLang">
-                // TODO: Flag
-              </label>
-            </div>
-            <div class="dropdown-divider"></div>
-            <div class="custom-control custom-radio">
-              <input class="custom-control-input" type="radio" name="prefLang" id="banglaLang" value="bangla" checked>
-              <label class="custom-control-label" for="banglaLang">
-                // TODO: Flag
-              </label>
-            </div>
+            ${langRadio("English - EN", "englishLang")}
+            ${langRadio("Nederlands - NL", "nederlandLang")}
+            ${langRadio("polski - PL", "polskiLang")}
+            ${langRadio("dansk - DA", "danskLang")}
             <div class="dropdown-divider"></div>
           </form>
+          <div>
+            <span>Waehrung aendern</span> <blue-link class="font-10" text="Weitere Informationen"></blue-link>
+          </div>
+          <div class="d-flex flex-row justify-content-between">
+            <span>EUR - Euro</span>
+            <blue-link class="font-12" text="Aendern"></blue-link>
+          </div>
+          <div class="dropdown-divider"></div>
+          <span class="text-nowrap">Sie kaufen bei Amazon.de ein.</span>
+          <div class="m-2 mb-1">
+            <blue-link class="font-12" text="Land/Region aendern"></blue-link>
+          </div>
         </div>
       `);
+    const linkDropdown = (div) => {
+      this._userAccLink.forEach(text => {
+        div
+          .addChild("a", "my-1 text-black text-decoration-none onhover-underlined onhover-orange font-12")
+          .setAttribute("href", "#")
+          .setTextContent(text);
+      });
+      return div;
+    }
+    const link = (text) => {
+      return new ElementBuilder("a")
+          .setClass("my-1 text-black text-decoration-none onhover-underlined onhover-orange font-12")
+          .setAttribute("href", "#")
+          .setTextContent(text)
+          .element.outerHTML;
+    }
     const userAccount = new ElementBuilder("li")
-      .setClass("nav-item dropdown px-2 navbar-fixed-height")
+      .setClass("nav-item dropdown onhover-dropdown px-2 navbar-fixed-height")
       .setInnerHTML(`
-        <a class="nav-link" href="#" id="userAccount" role="button" data-toggle="dropdown"
+        <a class="nav-link" href="#" id="userAccount" role="button" data-bs-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           <display-data title="Hallo, Thomas" subtitle="Konto und Listen"></display-data>
         </a>
         <div class="dropdown-menu px-3" aria-labelledby="userAccount">
-          <div class="d-flex flex-column justify-content-center">
-            <a href="#" class="btn btn-warning w-75 btn-sm font-weight-bold">Login</a>
-            <small>New customer?<a href="register.html"> Start here.</a></small>
+          <div class="d-flex flex-row">
+            <div class="d-flex flex-column px-2 text-wrap" style="width: 230px;>
+              <h6 class="fw-bold">Meine Listen</h6>
+              ${link("Alexa-Einkaufslite")}
+              <hr class="my-2" />
+              ${link("Ihre Listen")}
+              ${link("Filme und Merch")}
+              ${link("Sparen")}
+              <hr class="my-2" />
+              ${link("Geschenke finden")}
+              ${link("Neue Liste anlegen")}
+              ${link("Hochzeitsliste")}
+              ${link("Baby-Wunschliste")}
+              ${link("FInde deinen Stil")}
+              ${link("Entdecke Showroom")}
+            </div>
+            <div class="d-flex flex-column border-start px-3 text-wrap" style="width: 230px;>
+              <h6 class="fw-bold">Mein Konto</h6>
+              ${(linkDropdown(new ElementBuilder("div")).element.innerHTML)}
+              <hr class="my-2" />
+              ${link("Konten wechseln")}
+              ${link("Abmelden")}
+            </div>
           </div>
         </div>
     `);
@@ -522,8 +569,22 @@ class AmazonFooter extends HTMLElement {
       .addChildAndForget("hr", "text-secondary-amazon")
       .addChild("div", "d-flex flex-row justify-content-center pt-2 pb-5");
     buttonsWrapper
-      .addChild("btn", "btn btn-outline-secondary text-secondary-amazon mx-1")
-      .setTextContent("Deutsch");
+      .addChild("btn", "btn btn-outline-secondary dropdown onhover-dropdown text-secondary-amazon mx-1")
+      .setTextContent("Deutsch")
+      .addToInnerHTML(`
+        <div class="dropdown-menu font-12 p-3" aria-labelledby="languageDropdown">
+          <div>
+            <span>Sprache aendern</span> <blue-link class="font-10" text="Weitere Informationen"></blue-link>
+          </div>
+          <form>
+            ${langRadio("Deutsch - DE", "germanLang", true)}
+            <div class="dropdown-divider"></div>
+            ${langRadio("English - EN", "englishLang")}
+            ${langRadio("Nederlands - NL", "nederlandLang")}
+            ${langRadio("polski - PL", "polskiLang")}
+            ${langRadio("dansk - DA", "danskLang")}
+          </form>
+        </div>`);
     buttonsWrapper
       .addChild("btn", "btn btn-outline-secondary text-secondary-amazon mx-1")
       .setTextContent("Deutschland");
@@ -589,7 +650,7 @@ class DisplayData extends HTMLElement {
 
 class searchProduct extends HTMLElement{
   static name = "search-product";
-  
+
   constructor() {
     self = super();
   }
@@ -766,10 +827,134 @@ class searchProduct extends HTMLElement{
     ) .attach(self);
   }
 }
+  
+class ProductTopCategories extends HTMLElement {
+  static name = "product-top-categories";
+  _categories = [{
+    title: "Computer",
+  }, { 
+    title: "Angebote",
+  }, {
+    title: "Laptops",
+    children: []
+  }, {
+    title: "Tablets",
+    children: []
+  }, {
+    title: "Desktop-PCs",
+    children: []
+  }, {
+    title: "Gaming-PCs",
+    children: []
+  }, {
+    title: "Computer-Zubehoer",
+    children: []
+  }, {
+    title: "Komponenten",
+    children: []
+  }, {
+    title: "Monitore",
+    children: []
+  }, {
+    title: "Drucker",
+    children: []
+  }, {
+    title: "Bestsellter",
+  }, {
+    title: "Software",
+  }, {
+    title: "Amazon Business",
+  }]
+
+  constructor() {
+    self = super();
+  }
+
+  connectedCallback() {
+    const wrapper = new ElementBuilder("div")
+      .setClass("container-fluid border-bottom border-2 align-items-center d-flex flex-row justify-content-start")
+      .setId("product-top-categories");
+    this._categories.forEach(({title, children}, index) => {
+      const link = wrapper
+        .addChild("a", `mx-3 my-2 text-decoration-none text-black font-14 text-nowrap ${index === 0 ? "fw-bold" : ""}`)
+        .setAttribute("href", "#")
+        .setTextContent(title);
+      if (children)
+        link.addChild("i", "fa fa-caret-down ps-1")
+    });
+    wrapper.attach(self);
+  }
+}
+
+class CategoryTree extends HTMLElement {
+  static name = "category-tree";
+  _tree = ["Computer & Zubehoer", "Datenspeicherung", "NAS-Systeme", "Gehaeuse"];
+
+  constructor() {
+    self = super();
+  }
+
+  connectedCallback() {
+    const wrapper = new ElementBuilder("div")
+      .setClass("container-fluid mx-4 font-14 d-flex flex-row py-1 align-items-center");
+    
+    this._tree.forEach((text, index) => {
+      wrapper
+        .addChild("a", "font-12 onhover-underlined mx-2 my-1 text-decoration-none text-secondary")
+        .setAttribute("href", "#")
+        .setTextContent(text);
+      if (index !== this._tree.length - 1)
+        wrapper
+          .addChild("span", "font-10 my-1 text-secondary")
+          .setTextContent(">");
+    });
+    
+    wrapper.attach(self);
+  }
+}
+
+class BlueLink extends HTMLElement {
+  static name = "blue-link";
+
+  constructor() {
+    self = super();
+  }
+
+  connectedCallback() {
+    const text = this.getAttribute("text") || "No title";
+    const href = this.getAttribute("href") || "#";
+
+    const link = new ElementBuilder("a")
+      .setClass("onhover-orange onhover-underlined font-14 text-decoration-none")
+      .setAttribute("href", href);
+    link
+      .addChild("span")
+      .setTextContent(text)
+      .addToInnerHTML(self.innerHTML);
+    link.attach(self);
+  }
+}
+
+class ProductContainer extends HTMLElement {
+  static name = "product-container";
+
+  constructor() {
+    self = super();
+  }
+
+  connectedCallback() {
+    new ElementBuilder("div")
+      .setClass("row container-fluid mx-4")
+      .setAttribute("style", "max-width: 1920px; min-width: 996px;")
+      .setInnerHTML(self.innerHTML)
+      .setId("product-content")
+      .attach(self);
+  }
+}
 
 class checkboxLink extends HTMLElement{
   static name = "checkbox-link";
-  
+
   constructor() {
     self = super();
   }
@@ -785,6 +970,56 @@ class checkboxLink extends HTMLElement{
         ${linkText}
     </a>`
     ) .attach(self);
+  }
+}
+
+class ContainerRoundedBorder extends HTMLElement {
+  static name = "container-rounded-border";
+
+  constructor() {
+    self = super();
+  }
+
+  connectedCallback() {
+    new ElementBuilder("div")
+      .setClass("border p-2 m-2 rounded")
+      .setInnerHTML(self.innerHTML)
+      .attach(self);
+  }
+}
+
+class StarsBewertung extends HTMLElement {
+  static name = "stars-bewertung";
+
+  constructor() {
+    self = super();
+  }
+
+  connectedCallback() {
+    const sterne = this.getAttribute("sterne") || 4.38;
+
+    const link = new ElementBuilder("a")
+      .setClass("link-dark link-offset-2 link-underline link-underline-opacity-0 font-14")
+      .setAttribute("href", "#");
+
+    const notFilled = 5 - sterne[0];
+    for (let i = 0; i < sterne[0]; i++) {
+      link
+        .addChild("i", "fa-sharp fa-solid fa-star")
+        .setAttribute("href", "#")
+        .setAttribute("style", "color: #ffd11a;");
+    }
+    for (let i = 0; i < notFilled; i++) {
+      link
+        .addChild("i", "fa-sharp fa-regular fa-star")
+        .setAttribute("href", "#")
+        .setAttribute("style", "color: #ffd11a;");
+    }
+    link
+      .addChild("i", "fa-sharp fa-solid fa-chevron-down");
+    link.addToInnerHTML(sterne);
+
+    link.attach(self);
   }
 }
 
@@ -822,6 +1057,11 @@ class ElementBuilder {
     return this;
   }
 
+  addToInnerHTML(innerHTML) {
+    this.element.innerHTML += innerHTML;
+    return this;
+  }
+
   setAttributes(attributes) {
     attributes.forEach(([key, value]) => this.setAttribute(key, value));
     return this;
@@ -842,12 +1082,12 @@ class ElementBuilder {
 
   attach(attachingElement) {
     if (attachingElement) {
-      attachingElement.appendChild(
+      attachingElement.innerHTML =
         document
           .createElement("template")
           .appendChild(this.element)
           .cloneNode(true)
-      );
+          .outerHTML;
     }
   }
 }
@@ -858,6 +1098,61 @@ function registerCustomElements(elementClasses) {
   );
 }
 
+function imageZoom(imgID, resultID) {
+  let img, lens, result, cx, cy;
+  img = document.getElementById(imgID);
+  result = document.getElementById(resultID);
+  lens = document.createElement("div");
+  lens.setAttribute("class", "img-zoom-lens");
+  img.parentElement.insertBefore(lens, img);
+  /* Calculate the ratio between result DIV and lens: */
+  cx = result.offsetWidth / lens.offsetWidth;
+  cy = result.offsetHeight / lens.offsetHeight;
+  /* Set background properties for the result DIV */
+  result.style.backgroundImage = "url('" + img.src + "')";
+  result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+  /* Execute a function when someone moves the cursor over the image, or the lens: */
+  lens.addEventListener("mousemove", moveLens);
+  img.addEventListener("mousemove", moveLens);
+  /* And also for touch screens: */
+  lens.addEventListener("touchmove", moveLens);
+  img.addEventListener("touchmove", moveLens);
+  function moveLens(e) {
+    var pos, x, y;
+    /* Prevent any other actions that may occur when moving over the image */
+    e.preventDefault();
+    /* Get the cursor's x and y positions: */
+    pos = getCursorPos(e);
+    /* Calculate the position of the lens: */
+    x = pos.x - (lens.offsetWidth / 2);
+    y = pos.y - (lens.offsetHeight / 2);
+    /* Prevent the lens from being positioned outside the image: */
+    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+    if (x < 0) {x = 0;}
+    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+    if (y < 0) {y = 0;}
+    /* Set the position of the lens: */
+    lens.style.left = x + "px";
+    lens.style.top = y + "px";
+    /* Display what the lens "sees": */
+    result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
+  }
+  function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    /* Get the x and y positions of the image: */
+    a = img.getBoundingClientRect();
+    /* Calculate the cursor's x and y coordinates, relative to the image: */
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    /* Consider any page scrolling: */
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+  }
+} 
+
 (() => {
-  registerCustomElements([AmazonNavbar, AmazonFooter, DisplayData, searchProduct, checkboxLink]);
+  registerCustomElements([AmazonNavbar, AmazonFooter, DisplayData, searchProduct, checkboxLink, ProductTopCategories, CategoryTree, ProductContainer, ContainerRoundedBorder, BlueLink, StarsBewertung]);
+  setTimeout(() => imageZoom("image-preview", "result-image-zoom"), 3000); 
 })();

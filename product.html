@@ -7,17 +7,175 @@
     <title>Productpage - Amazingo!!!! - The best online shop</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='assets/style.css'>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
     <script src="assets/script.js" defer></script>
 </head>
 
 <body>
     <amazon-navbar></amazon-navbar>
+    <product-top-categories></product-top-categories>
+    <category-tree></category-tree>
+    <product-container>
+        <div class="col-4">
+            <div class="row">
+                <div class="col-1">
+                    <!-- <div style="height: 100px; width: 50px;">
+                        <img src="ProductPagePictures/NAS1.jpg" alt="">
+                    </div>
+                    <div style="height: 100px; width: 50px;">
+                        <img src="ProductPagePictures/NAS2.jpg" alt="">
+                    </div>
+                    <div style="height: 100px; width: 50px;">
+                        <img src="ProductPagePictures/NAS3.jpg" alt="">
+                    </div>
+                    <div style="height: 100px; width: 50px;">
+                        <img src="ProductPagePictures/NAS4.jpg" alt="">
+                    </div> -->
+                </div>
+                <div class="col-11">
+                    <img id="image-preview" src="ProductPagePictures/NAS1.jpg" alt="" style="width: 100%; height: auto;">
+                    <div id="result-image-zoom"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-5 font-14">
+            <h4>Synology D5223 2-Bay Diskstation NAS (Realtek RTD1619B) Quad-Core 2GB Ram 1xRJ-45 1GbE LAN-Port</h4>
+            <div>
+                <blue-link text="Besuche den Synology-Store"></blue-link>
+            </div>
+            <div>
+                <stars-bewertung sterne="1.2"></stars-bewertung>
+            </div>
+            <div>
+                Amazon Tipps fuer "<blue-link text="synology ds223"></blue-link>"
+            </div>
+            <hr class="mt-1"/>
+            <div>
+                <h4><span class="text-danger">-12 %</span><span><span> 269</span><sup class="font-14">00 Euro</sup></h4>
+            </div>
+            <div class="align-items-center font-12 text-secondary py-2 text-nowrap">
+                UVP: <span class="text-decoration-line-through">304,90 Euro</span><i class="fa fa-circle-info ms-1"></i>
+            </div>
+            <div>
+                <blue-link text="KOSTENFREIE Retouren"><i class="fa fa-chevron-down"></i></blue-link>
+            </div>
+            <div>
+                Preisangaben inkl. USt. Abhaengig von der Lieferadresse kann die USt. an der Kasse variieren <blue-link text="Weitere Informationen."></blue-link>
+            </div>
+            <div class="my-3">
+                <blue-link text="Moechtest du dein Elektro- oder Elektronikgeraet kostenlos recyceln?"></blue-link>
+            </div>
+            <div class="my-2">
+                <span><span class="fw-bold">Spezifische Verwendungsmoeglichkeiten fuer Produkt:</span> Alltagsgebrauch</span>
+            </div>
+            <div class="my-2">
+                <span class="fw-bold">Marke:</span> Synology 
+            </div>
+            <div class="my-2">
+                <span class="fw-bold">Betriebssystem:</span> Synology 
+            </div>
+            <div class="my-2">
+                <span class="fw-bold">Speicherkapazitaet:</span> Synology 
+            </div>
+            <div class="my-2">
+                <span class="fw-bold">Groessse des installierten RAM-Speichers:</span> 2 GB
+            </div>
+            <div class="my-2">
+                <span class="fw-bold">Modellname:</span> DS223
+            </div>
+            <div class="text-nowrap">
+                <i class="fa fa-chevron-down"></i><blue-link text="Mehr anzeigen"></blue-link>
+            </div>
+            <hr/>
+            <h6 class="fw-bold">Info zu diesem Artikel</h6>
+            <ul>
+                <li>Synology D5223 2-Bay Diskstation NAS (Realtek RTD16198B Quad-Core 2GB Ram TxRJ-45 GbE LAN-Port)</li>
+            </ul>
+            <div class="text-nowrap">
+                <i class="fa fa-chevron-right"></i><blue-link text="Weitere Produktdetails"></blue-link>
+            </div>
+            <div class="mt-2 text-nowrap">
+                <i class="fa fa-regular fa-comment"></i><blue-link text="Weitere Produktdetails"></blue-link>
+            </div>
+        </div>
+        <div class="col-3 font-14">
+            <container-rounded-border>
+                <div>
+                    <h4>269<sup class="font-14">00 Euro</sup></h4>
+                </div>
+                <div>
+                    <blue-link text="KOSTENFREIE Retouren"><i class="fa fa-chevron-down"></i></blue-link>
+                </div>
+                <div class="my-2">
+                    <blue-link text="GRATIS Lieferung"></blue-link> Samstag, 21. Oktober
+                </div>
+                <div>
+                    Oder schnellste Lieferung <span class="fw-bold">Freitag, 20. Oktober.</span> Bestellung innerhalb <span class="text-success">12 Stdn. 37 Min.</span>
+                </div>
+                <div class="my-2">
+                    <i class="fa fa-regular fa-location-dot"></i> <blue-link text="Liefern an Thomas - 84082 Laberweinting"></blue-link>
+                </div>
+                <div class="h5 text-success">Auf Lager</div>
+                <div class="text-nowrap">
+                    <label for="menge">Menge:</label>
+                    <select class="form-select" aria-label="select menge" id="menge">
+                        <option selected value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">3</option>
+                        <option value="5">3</option>
+                        <option value="6">3</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="btn btn-warning w-100 mt-2 rounded">in den Einkaufswagen</button>
+                </div>
+                <div>
+                    <button class="btn btn-warning w-100 my-2 rounded">Jetzt kaufen</button>
+                </div>
+                <div>
+                    <div style="width: 50%; display:inline-block;">Versand</div>Amazon
+                </div>
+                <div>
+                    <div style="width: 50%; display:inline-block;">Verkaeufer</div>Amazon
+                </div>
+                <div>
+                    <div style="width: 50%; display:inline-block;">Rueckgaben</div><div sytle="width: 50%;"><blue-link text="Retournierbar innerhalb von 30 Tagen nach Erhalt"></blue-link></div>
+                </div>
+                <div>
+                    <div style="width: 50%; display:inline-block;">Verpackung</div><div sytle="width: 50%;"><blue-link text="Der Inhalt ist sichtbar."></blue-link></div>
+                </div>
+                <div>
+                    <i class="fa fa-chevron-down"></i><blue-link text="Mehr anzeigen"></blue-link>
+                </div>
+                <div>
+                    <input type="checkbox" name="geschenkoption" id="geschenkoption">
+                    <label for="geschenkoption">Geschenkoption hinzufuegen</label>
+                </div>
+                <hr/>
+                <button class="btn btn-outline-dark w-100">Auf die Liste</button>
+            </container-rounded-border>
+            <container-rounded-border>
+                <div class="font-14 fw-bold w-100 text-center">Zubehoer hinzufuegen</div>
+                <hr class="my-1"/>
+                <div>
+                    <blue-link text="Norton 360 2022 | Deluxe | 3 Geraete | 1 Benutzer | 1 Jahr - kontinuierlicher Schutz (auto..."></blue-link>
+                </div>
+                <div class="d-flex flex-row justify-content-between align-items-center">
+                    15,99 Euro <button class="btn btn-warning">In den Einkaufswagen</button>
+                </div>
+            </container-rounded-border>
+            <container-rounded-border>
+                <div class="d-flex flex-row align-items-center justify-content-center">
+                    <span>Neu & Gebraucht (40) von 267<sup>00 Euro</sup><span class="fw-bold"> Kostenlose Lieferung.</span></span>
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+            </container-rounded-border>
+        </div>
+    </product-container>
     <amazon-footer></amazon-footer>
 </body>
 
