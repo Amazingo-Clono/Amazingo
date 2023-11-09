@@ -51,8 +51,30 @@
     padding: 10px;
     background: white;
 }
+
 #SEPA-icon {
     width: 90%;
+}
+
+#toggle-button > a:hover, #toggle-button > button:hover {
+    border: 1px solid white;
+}
+
+#toggle-button > a, #toggle-button > button {
+    border: 1px solid transparent;
+    border-radius: 0;
+}
+
+blue-link.font-10 > a{
+    font-size: 10px !important;
+}
+
+blue-link.font-12 > a{
+    font-size: 12px !important;
+}
+
+.font-10 {
+    font-size: 10px !important;
 }
 
 .font-12 {
@@ -93,6 +115,22 @@
 #sidebar.active {
     margin-left: 0;
     display: inline-block;
+}
+
+#product-top-categories > a:hover {
+    text-decoration: underline solid orange 1.5px !important;
+}
+
+.onhover-orange:hover {
+    color: orange !important;
+}
+
+.onhover-dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.onhover-dropdown:hover > .dropdown-toggle:active {
+    pointer-events: none;
 }
 
 .text-secondary-amazon {
@@ -155,3 +193,18 @@
 .orangeLink:hover {
     color: darkorange !important; 
 } 
+
+.img-zoom-lens {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  /*set the size of the lens:*/
+  width: 40px;
+  height: 40px;
+}
+
+#result-image-zoom {
+  border: 1px solid #d4d4d4;
+  /*set the size of the result div:*/
+  width: 300px;
+  height: 300px;
+}
