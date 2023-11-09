@@ -354,7 +354,7 @@ class AmazonNavbar extends HTMLElement {
       .setAttribute("id", "topOfPage")
       .setInnerHTML(`
         <a class="navbar-brand pl-2" href="index.html">
-          <img src="" height="30" width="100" alt="amazon logo">
+          <img src="assets/img/amazon_logo.png" height="30" width="100" alt="amazon logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -587,6 +587,207 @@ class DisplayData extends HTMLElement {
   }
 }
 
+class searchProduct extends HTMLElement{
+  static name = "search-product";
+  
+  constructor() {
+    self = super();
+  }
+
+  connectedCallback() {
+    const imgSource = this.getAttribute("src")
+    const widthDelete = this.getAttribute("customClass") || ""
+    const titleProduct = this.getAttribute("titleProduct") || "Amazon Basics LED-Leuchtmittel, Edison-Sockel E27, 7 W (entspricht 60-W-Glühbirne), nicht dimmbar, klares Filament, 2 Stück"
+    self.setAttribute("style", "padding: 0;")
+    new ElementBuilder("div")
+    .setClass("col p-1 " + widthDelete )
+    .setInnerHTML (
+    `<div class="card border-light-subtle">
+          <div class="Produktbild-hoehe">
+              <img class="Suche_Produktbild" src="${imgSource}"
+                  alt="Festplatte">
+          </div>
+          <div class="card-body">
+              <h5 class="card-title">${titleProduct}</h5>
+              <ul class="list-group">
+                  <li class="list-unstyled">
+                      <div class="dropdown_Stars">
+                          <span>
+                              <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                              <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                              <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                              <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                              <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
+                          </span>
+                          <div class="dropdown_content_Stars">
+                              <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                              <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                              <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                              <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                              <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
+                              4,6 von 5
+                              <p class="font-14">4.354 globale Bewertungen</p>
+                              <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                  href="#">
+                                  <div class="row">
+                                      <div class="col-3">
+                                          <p>5 Sterne</p>
+                                      </div>
+                                      <div class="col">
+                                          <div class="progress" role="progressbar"
+                                              aria-label="Warning example" aria-valuenow="100"
+                                              aria-valuemin="0" aria-valuemax="100">
+                                              <div class="progress-bar bg-warning"
+                                                  style="width: 71%"></div>
+                                          </div>
+                                      </div>
+                                      <div class="col-2">
+                                          <p>71%</p>
+                                      </div>
+                                  </div>
+                              </a>
+                              <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                  href="#">
+                                  <div class="row">
+                                      <div class="col-3">
+                                          <p>4 Sterne</p>
+                                      </div>
+                                      <div class="col">
+                                          <div class="progress col" role="progressbar"
+                                              aria-label="Warning example" aria-valuenow="75"
+                                              aria-valuemin="0" aria-valuemax="100">
+                                              <div class="progress-bar bg-warning"
+                                                  style="width: 19%"></div>
+                                          </div>
+                                      </div>
+                                      <div class="col-2">
+                                          <p>19%</p>
+                                      </div>
+                                  </div>
+                              </a>
+                              <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                  href="#">
+                                  <div class="row">
+                                      <div class="col-3">
+                                          <p>3 Sterne</p>
+                                      </div>
+                                      <div class="col">
+                                          <div class="progress col" role="progressbar"
+                                              aria-label="Warning example" aria-valuenow="75"
+                                              aria-valuemin="0" aria-valuemax="100">
+                                              <div class="progress-bar bg-warning"
+                                                  style="width: 5%"></div>
+                                          </div>
+                                      </div>
+                                      <div class="col-2">
+                                          <p>5%</p>
+                                      </div>
+                                  </div>
+                              </a>
+                              <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                  href="#">
+                                  <div class="row">
+                                      <div class="col-3">
+                                          <p>2 Sterne</p>
+                                      </div>
+                                      <div class="col">
+                                          <div class="progress col" role="progressbar"
+                                              aria-label="Warning example" aria-valuenow="75"
+                                              aria-valuemin="0" aria-valuemax="100">
+                                              <div class="progress-bar bg-warning"
+                                                  style="width: 2%"></div>
+                                          </div>
+                                      </div>
+                                      <div class="col-2">
+                                          <p>2%</p>
+                                      </div>
+                                  </div>
+                              </a>
+                              <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                  href="#">
+                                  <div class="row">
+                                      <div class="col-3">
+                                          <p>1 Sterne</p>
+                                      </div>
+                                      <div class="col">
+                                          <div class="progress col" role="progressbar"
+                                              aria-label="Warning example" aria-valuenow="75"
+                                              aria-valuemin="0" aria-valuemax="100">
+                                              <div class="progress-bar bg-warning"
+                                                  style="width: 2%"></div>
+                                          </div>
+                                      </div>
+                                      <div class="col-2">
+                                          <p>2%</p>
+                                      </div>
+                                  </div>
+                              </a>
+                              <hr>
+                              <div class="d-flex justify-content-center p-0 m-0">
+                                  <a class="orangeLink link-offset-2 font-14 p-0 m-0" href="#"
+                                      style="color: blue;">
+                                      Bewertungen anzeigen
+                                  </a>
+                              </div>
+                          </div>
+                      </div>
+                      <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                          href="#">
+                          <i class="fa-sharp fa-solid fa-chevron-down"></i> 4.350
+                      </a>
+                  </li>
+                  <li class="list-unstyled">
+                      <p class="font-14">3000+ mal gekauft im letzten Monat</p>
+                  </li>
+                  <li class="list-unstyled">
+                      <p class="fs-4 bolder">7,95€</p>
+                  </li>
+                  <li class="list-unstyled">
+                      <p class="font-14 lh-1"> Lieferung bis Donnerstag, 9. November
+                          GRATIS-Versand für
+                          Bestellungen
+                          ab 39,00 € und Versand durch Amazon
+                      </p>
+                  </li>
+                  <li class="list-unstyled">
+                      <p class="font-14">Andere Angebote</p>
+                      <p class="font-14">5,47€ <a href="#" class="pe-auto">(18 gebrauchte und neue
+                              Artikel)</a>
+                      </p>
+                  </li>
+                  <li class="list-unstyled">
+                      <img class="Energieeffizienz" src="assets/img/Energieeffizienz_E.jpg"
+                          alt="Energieeffizienz_E"><a href="#" class="pe-auto font-14">
+                          Produktdatenblatt</a>
+                  </li>
+              </ul>
+          </div>
+      </div>`
+    ) .attach(self);
+  }
+}
+
+class checkboxLink extends HTMLElement{
+  static name = "checkbox-link";
+  
+  constructor() {
+    self = super();
+  }
+
+  connectedCallback() {
+    const linkText = this.getAttribute("linkText")
+    self.setAttribute("style", "padding: 0;")
+    new ElementBuilder("li")
+    .setClass("list-unstyled")
+    .setInnerHTML (
+    `<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14" href="#">
+        ${linkText}
+    </a>`
+    ) .attach(self);
+  }
+}
+
 class ElementBuilder {
   element = null;
 
@@ -658,5 +859,5 @@ function registerCustomElements(elementClasses) {
 }
 
 (() => {
-  registerCustomElements([AmazonNavbar, AmazonFooter, DisplayData]);
+  registerCustomElements([AmazonNavbar, AmazonFooter, DisplayData, searchProduct, checkboxLink]);
 })();

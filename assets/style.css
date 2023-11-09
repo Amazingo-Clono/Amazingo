@@ -1,5 +1,7 @@
-<<<<<<< HEAD
 
+#page {
+    min-width: 1000px !important;
+}
 
 .container-lg {
     width: 200%;
@@ -20,8 +22,6 @@
     background-color: white;
 }
 
-=======
->>>>>>> refs/remotes/origin/main
 #hinweis {
     margin: auto;
     padding: 10px;
@@ -56,8 +56,9 @@
     padding: 10px;
     background: white;
 }
-#SEPA-icon {
-    width: 90%;
+
+.font-11 {
+    font-size: 11px !important;
 }
 
 .font-12 {
@@ -80,7 +81,7 @@
 }
 
 .Produkt {
-    max-width: 400px;
+    max-width: 600px;
     min-width: 200px;
 }
 
@@ -92,7 +93,7 @@
 }
 
 .Suche_Produktbild{
-    width: 95%;
+    width: 90%;
 }
 
 .orangeLink {
@@ -102,6 +103,10 @@
 .orangeLink:hover {
     color: darkorange !important; 
 } 
+
+#Einkaufswagen_seite {
+    width: 140px !important;
+}
 
 #backToTop {
     display: block;
@@ -157,3 +162,29 @@
 .onhover-underlined:hover {
     text-decoration: underline !important;
 }
+
+
+.dropdown_sidebar {
+    width: 100% !important;
+    height: 30px;
+}
+
+.dropdown_Stars {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown_content_Stars {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 400px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown_Stars:hover .dropdown_content_Stars {
+    display: block;
+}
+

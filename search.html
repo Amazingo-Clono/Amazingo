@@ -17,1270 +17,451 @@
 </head>
 
 <body>
-    <amazon-navbar></amazon-navbar>
-    <div class="row top-row">
-        <div class="col justify-content-center">
-            <p class="font-14">1-48 von mehr als 9.000 Ergebnissen oder Vorschlägen für "glühbirne"</p>
-        </div>
-        <div class="col-1 justify-content-center">
-            <select class="form-select form-select-sm" aria-label="Sortierung:">
-                <option selected>Empfohlen</option>
-                <option value="1">Preis: Aufsteigend</option>
-                <option value="2">Pries: Absteigend</option>
-                <option value="3">Durchschn. Kundenbewertung</option>
-                <option value="3">Neuheiten</option>
-            </select>
-        </div>
+    <div class="row" id="page">
+        <div class="col pe-0">
+            <amazon-navbar></amazon-navbar>
+            <div class="row top-row">
+                <div class="col">
+                    <p class="font-14 mt-2 ms-4">1-48 von mehr als 9.000 Ergebnissen oder Vorschlägen für
+                        "glühbirne"
+                    </p>
+                </div>
+                <div class="col-2 justify-content-center">
+                    <select class="form-select form-select-sm mt-1" aria-label="Sortierung:">
+                        <option selected>Empfohlen</option>
+                        <option value="1">Preis: Aufsteigend</option>
+                        <option value="2">Pries: Absteigend</option>
+                        <option value="3">Durchschn. Kundenbewertung</option>
+                        <option value="3">Neuheiten</option>
+                    </select>
+                </div>
 
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-2">
-            <ol class="list-group">
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Entdecken Sie verwandte Produkte</div>
-                        <ul class="list-group">
-                            <ul class="list-group">
-                                <li class="list-unstyled">
-                                    <a class="link-offset-2 link-underline link-underline-opacity-0 font-14 orangeLink"
-                                        href="#">
-                                        glühbirne e27
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <a class="link-offset-2 link-underline link-underline-opacity-0 font-14 orangeLink"
-                                        href="#">
-                                        glühbirne 60 watt klar
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        glühbirne halogen
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        glühbirne alexa
-                                    </a>
-                                </li>
-                            </ul>
-                        </ul>
-                    </div>
-                </li>
-                <hr>
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Berechtigt zum Kostenfreien Versand</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        Gratis Versand durch Amazon
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-2">
+                    <ol class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Entdecken Sie verwandte Produkte</div>
+                                <ul class="list-group">
+                                    <ul class="list-group">
+                                        <li class="list-unstyled">
+                                            <a class="link-offset-2 link-underline link-underline-opacity-0 font-14 orangeLink"
+                                                href="#">
+                                                glühbirne e27
+                                            </a>
+                                        </li>
+                                        <li class="list-unstyled">
+                                            <a class="link-offset-2 link-underline link-underline-opacity-0 font-14 orangeLink"
+                                                href="#">
+                                                glühbirne 60 watt klar
+                                            </a>
+                                        </li>
+                                        <li class="list-unstyled">
+                                            <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                                href="#">
+                                                glühbirne halogen
+                                            </a>
+                                        </li>
+                                        <li class="list-unstyled">
+                                            <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                                href="#">
+                                                glühbirne alexa
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+                        </li>
+                        <hr>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Berechtigt zum Kostenfreien Versand</div>
+                                <ul class="list-group">
+                                    <checkbox-link linkText="GratisVersand durch Amazon"></checkbox-link>
+                                </ul>
+                            </div>
+                        </li>
 
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Nachhaltige Produkte</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        climate Plege friendly
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Nachhaltige Produkte</div>
+                                <ul class="list-group">
+                                    <checkbox-link linkText="climate Plege friendly"></checkbox-link>
+                                </ul>
+                            </div>
+                        </li>
 
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Kategorie</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    glühbirne e27
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    glühbirne 60 watt klar
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    glühbirne halogen
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    glühbirne alexa
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Kundenrezensionen</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                    <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                    <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                    <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                    <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i> & mehr
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    <i class="fa-sharp fa-solid fa-star" style="color: #ffd877;"></i>
-                                    <i class="fa-sharp fa-solid fa-star" style="color: #ffd877;"></i>
-                                    <i class="fa-sharp fa-solid fa-star" style="color: #ffd877;"></i>
-                                    <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i>
-                                    <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i> & mehr
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    <i class="fa-sharp fa-solid fa-star" style="color: #ffd877;"></i>
-                                    <i class="fa-sharp fa-solid fa-star" style="color: #ffd877;"></i>
-                                    <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i>
-                                    <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i>
-                                    <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i> & mehr
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    <i class="fa-sharp fa-solid fa-star" style="color: #ffd877;"></i>
-                                    <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i>
-                                    <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i>
-                                    <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i>
-                                    <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i> & mehr
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Marke</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Amazon BASICS
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Osram
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    EMOS
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Leuci
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Lepro
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    PHILIPS
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Beliebiger Preis</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    0 - 20 EUR
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    20 - 50 EUR
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    50 - 100 EUR
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    100 - 200 EUR
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Über 200 EUR
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <ul class="list-group list-group-horizontal list-group-flush">
-                                    <li class="list-group-item list-unstyled font-14">
-                                        <input type="price" class="form-control" placeholder="Min">
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Kategorie</div>
+                                <ul class="list-group">
+                                    <li class="list-unstyled">
+                                        <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                            href="#">
+                                            glühbirne e27
+                                        </a>
                                     </li>
-                                    <li class="list-group-item list-unstyled font-14">
-                                        <input type="price" class="form-control" placeholder="Max">
+                                    <li class="list-unstyled">
+                                        <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                            href="#">
+                                            glühbirne 60 watt klar
+                                        </a>
                                     </li>
-                                    <li class="list-group-item list-unstyled font-14">
-                                        <button type="button" class="btn btn-secondary">Los</button>
+                                    <li class="list-unstyled">
+                                        <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                            href="#">
+                                            glühbirne halogen
+                                        </a>
+                                    </li>
+                                    <li class="list-unstyled">
+                                        <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                            href="#">
+                                            glühbirne alexa
+                                        </a>
                                     </li>
                                 </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Kundenrezensionen</div>
+                                <ul class="list-group">
+                                    <li class="list-unstyled">
+                                        <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                            href="#">
+                                            <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                                            <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                                            <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                                            <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                                            <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i> & mehr
+                                        </a>
+                                    </li>
+                                    <li class="list-unstyled">
+                                        <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                            href="#">
+                                            <i class="fa-sharp fa-solid fa-star" style="color: #ffd877;"></i>
+                                            <i class="fa-sharp fa-solid fa-star" style="color: #ffd877;"></i>
+                                            <i class="fa-sharp fa-solid fa-star" style="color: #ffd877;"></i>
+                                            <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i>
+                                            <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i> & mehr
+                                        </a>
+                                    </li>
+                                    <li class="list-unstyled">
+                                        <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                            href="#">
+                                            <i class="fa-sharp fa-solid fa-star" style="color: #ffd877;"></i>
+                                            <i class="fa-sharp fa-solid fa-star" style="color: #ffd877;"></i>
+                                            <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i>
+                                            <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i>
+                                            <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i> & mehr
+                                        </a>
+                                    </li>
+                                    <li class="list-unstyled">
+                                        <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                            href="#">
+                                            <i class="fa-sharp fa-solid fa-star" style="color: #ffd877;"></i>
+                                            <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i>
+                                            <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i>
+                                            <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i>
+                                            <i class="fa-sharp fa-regular fa-star" style="color: #ffd877;"></i> & mehr
+                                        </a>
+                                    </li>
 
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Angebote und Ersparnis</div>
-                        <ul class="list-group">
-                            <ul class="list-group">
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        Alle Angebote
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <a class="link-offset-2 link-underline link-underline-opacity-0 font-14" href="#">
-                                        Angebote
-                                    </a>
-                                </li>
-                            </ul>
-                        </ul>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Marke</div>
+                                <ul class="list-group">
+                                    <checkbox-link linkText="Amazon Basics"></checkbox-link>
+                                    <checkbox-link linkText="Osram"></checkbox-link>
+                                    <checkbox-link linkText="EMOS"></checkbox-link>
+                                    <checkbox-link linkText="Leuci"></checkbox-link>
+                                    <checkbox-link linkText="Lebpr"></checkbox-link>
+                                    <checkbox-link linkText="PHILIPS"></checkbox-link>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Beliebiger Preis</div>
+                                <ul class="list-group">
+                                    <li class="list-unstyled">
+                                        <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                            href="#">
+                                            0 - 20 EUR
+                                        </a>
+                                    </li>
+                                    <li class="list-unstyled">
+                                        <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                            href="#">
+                                            20 - 50 EUR
+                                        </a>
+                                    </li>
+                                    <li class="list-unstyled">
+                                        <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                            href="#">
+                                            50 - 100 EUR
+                                        </a>
+                                    </li>
+                                    <li class="list-unstyled">
+                                        <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                            href="#">
+                                            100 - 200 EUR
+                                        </a>
+                                    </li>
+                                    <li class="list-unstyled">
+                                        <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                            href="#">
+                                            Über 200 EUR
+                                        </a>
+                                    </li>
+                                    <li class="list-unstyled border-0">
+                                        <ul class="list-group list-group-horizontal list-group-flush">
+                                            <li class="list-group-item list-unstyled font-14">
+                                                <input type="price" class="form-control" placeholder="Min">
+                                            </li>
+                                            <li class="list-group-item list-unstyled font-14">
+                                                <input type="price" class="form-control" placeholder="Max">
+                                            </li>
+                                            <li class="list-group-item list-unstyled font-14">
+                                                <button type="button" class="btn btn-secondary">Los</button>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Angebote und Ersparnis</div>
+                                <ul class="list-group">
+                                    <ul class="list-group">
+                                        <li class="list-unstyled">
+                                            <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                                href="#">
+                                                Alle Angebote
+                                            </a>
+                                        </li>
+                                        <li class="list-unstyled">
+                                            <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                                href="#">
+                                                Angebote
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">unsere Marken</div>
+                                <ul class="list-group">
+                                    <checkbox-link linkText="unsere Marken"></checkbox-link>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Größe der Glühbirnenform</div>
+                                <ul class="list-group">
+                                    <checkbox-link linkText="A15"></checkbox-link>
+                                    <checkbox-link linkText="A17"></checkbox-link>
+                                    <checkbox-link linkText="A19"></checkbox-link>
+                                    <checkbox-link linkText="A21"></checkbox-link>
+                                    <checkbox-link linkText="A23"></checkbox-link>
+                                    <checkbox-link linkText="AR111"></checkbox-link>
+                                    <checkbox-link linkText="AR70"></checkbox-link>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Lampenfassung</div>
+                                <ul class="list-group">
+                                    <checkbox-link linkText="2G7"></checkbox-link>
+                                    <checkbox-link linkText="B15d"></checkbox-link>
+                                    <checkbox-link linkText="B22d"></checkbox-link>
+                                    <checkbox-link linkText="E5"></checkbox-link>
+                                    <checkbox-link linkText="E12"></checkbox-link>
+                                    <checkbox-link linkText="E14"></checkbox-link>
+                                    <checkbox-link linkText="E26"></checkbox-link>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Lichtleistung von Leuchtmitteln</div>
+                                <ul class="list-group">
+                                    <checkbox-link linkText="bis 249 lm"></checkbox-link>
+                                    <checkbox-link linkText="250 bis 499 lm"></checkbox-link>
+                                    <checkbox-link linkText="500 bis 999 lm"></checkbox-link>
+                                    <checkbox-link linkText="1000 bis 1999 lm"></checkbox-link>
+                                    <checkbox-link linkText="2000 lm & mehr"></checkbox-link>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Wattleistung</div>
+                                <ul class="list-group">
+                                    <checkbox-link linkText="Bis 4,9 W"></checkbox-link>
+                                    <checkbox-link linkText="5 bis 8,9 W"></checkbox-link>
+                                    <checkbox-link linkText="9 - 12,9 W"></checkbox-link>
+                                    <checkbox-link linkText="13 W & mehr"></checkbox-link>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Packungsgröße von Leuchtmitteln</div>
+                                <ul class="list-group">
+                                    <checkbox-link linkText="Bis 2"></checkbox-link>
+                                    <checkbox-link linkText="3 bis 6"></checkbox-link>
+                                    <checkbox-link linkText="7 bis 12"></checkbox-link>
+                                    <checkbox-link linkText="13 & mehr"></checkbox-link>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Farbtemperatur von Leuchtmitteln</div>
+                                <ul class="list-group">
+                                    <checkbox-link linkText="1700 bis 2699 K"></checkbox-link>
+                                    <checkbox-link linkText="2700 bis 3349 K"></checkbox-link>
+                                    <checkbox-link linkText="3350 bis 4149 K"></checkbox-link>
+                                    <checkbox-link linkText="4150 bis 5999 K"></checkbox-link>
+                                    <checkbox-link linkText="6000 K & mehr"></checkbox-link>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Steuerungstyp</div>
+                                <ul class="list-group">
+                                    <checkbox-link linkText="Amazon Alexa"></checkbox-link>
+                                    <checkbox-link linkText="Apple Homekit"></checkbox-link>
+                                    <checkbox-link linkText="Google Asistant"></checkbox-link>
+                                    <checkbox-link linkText="IOS"></checkbox-link>
+                                    <checkbox-link linkText="Android"></checkbox-link>
+                                    <checkbox-link linkText="Control 4"></checkbox-link>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Made in</div>
+                                <ul class="list-group">
+                                    <checkbox-link linkText="Italien"></checkbox-link>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-start border-0">
+                            <div class="ms-2 me-auto">
+                                <div class="fw-bold font-14">Verfügbarkeit</div>
+                                <ul class="list-group">
+                                    <checkbox-link linkText="Nicht verfügbare Artikel einschließen"></checkbox-link>
+                                </ul>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-10 pe-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="fw-bold fs-5">Weitere Ergebnisse</div>
+                            <p class="font-14"><a href="#" class="pe-auto">Erfahre mehr über diese Ergebnisse</a>
+                                Preis und weitere
+                                Details sind von Größe und Farbe des Produkts abhängig</p>
+                        </div>
                     </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">unsere Marken</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    unsere Marken
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="row row-cols-3 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne3.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne1.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne2.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne4.jpg"
+                            customClass="d-none d-lg-block"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne5.jpg"
+                            customClass="d-none d-xl-block"></search-product>
                     </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Größe der Glühbirnenform</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    A15
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    A17
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    A19
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    A21
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    A23
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    AR111
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    AR70
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <div class="fw-bold fs-5">Weitere Ergebnisse</div>
+                        </div>
                     </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Lampenfassung</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    2G7
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    B15d
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    B22d
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    E5
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    E12
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    E14
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    E26
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne6.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne7.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne8.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne9.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne10.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne11.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne12.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne13.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne14.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne15.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne16.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne17.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne18.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne19.jpg"></search-product>
+                        <search-product src="Produktbilder/Gluehbirnen/glühbirne20.jpg"></search-product>
                     </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Lichtleistung von Leuchtmitteln</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    bis 249 lm
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    250 bis 499 lm
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    500 bis 999 lm
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    1000 bis 1999 lm
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    2000 lm & mehr
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Wattleistung</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Bis 4,9 W
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    5 bis 8,9 W
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    9 - 12,9 W
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    13 W & mehr
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Packungsgröße von Leuchtmitteln</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Bis 2
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    3 bis 6
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    7 bis 12
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    13 & mehr
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Farbtemperatur von Leuchtmitteln</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    1700 bis 2699 K
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    2700 bis 3349 K
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    3350 bis 4149 K
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    4150 bis 5999 K
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    6000 K & mehr
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Steuerungstyp</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Amazon Alexa
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Apple Homekit
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Google Asistant
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    IOS
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Android
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Control 4
-                                </a>
-                            </li>
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Android
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Made in</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Italien
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-start border-0">
-                    <div class="ms-2 me-auto">
-                        <div class="fw-bold font-14">Verfügbarkeit</div>
-                        <ul class="list-group">
-                            <li class="list-unstyled">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                    href="#">
-                                    Nicht verfügbare Artikel einschließen
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </ol>
+
+                </div>
+            </div>
+            <amazon-footer></amazon-footer>
         </div>
-        <div class="col-9">
-            <div class="row">
-                <div class="col-12">
-                    <div class="fw-bold fs-5">Weitere Ergebnisse</div>
-                    <p class="font-14"><a href="#" class="pe-auto">Erfahre mehr über diese Ergebnisse</a>
-                        Preis und weitere
-                        Details sind von Größe und Farbe des Produkts abhängig</p>
+        <div class="border" id="Einkaufswagen_seite">
+            <div class="row ">
+                <p class="text-center font-11 p-0 m-0 mt-3">Zwischensumme</p>
+                <p class="text-center fw-bolder text-danger mb-0 mt-0">224,99€</p>
+                <p class="text-center font-11 text-success p-0 m-1">Deine Bestellung qualifiziert sich für GRATIS
+                    Standardversand.
+                    Details</p>
+                <a href="warenkorb.html" class="btn btn-outline-dark font-11 p-0 m-1" tabindex="-1" role="button">Zum
+                    Einkaufswagen</a>
+            </div>
+            <div class="row Produkt_Einkaufswagen_seite border-top mt-2">
+                <img class="Produktbilder_Seitenleiste" src="Produktbilder/Festplatte.jpeg" alt="Festplatte">
+                <p class="text-center">69,99€</p>
+                <div class="col-6 p-0 m-1 align-items-center">
+                    <select class="form-select form-select-sm dropdown_sidebar font-11 p-0" aria-label="Menge:">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                    </select>
+                </div>
+                <div class="col-4 p-0 m-1 align-items-center">
+                    <button type="button" class="btn btn-light btn-sm">
+                        <i class="fa-sharp fa-regular fa-trash" style="color: #000000;"></i>
+                    </button>
                 </div>
             </div>
-            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                <div class="col p-1">
-                    <div class="card border-light-subtle">
-                        <div class="Produktbild-hoehe">
-                            <img class="Suche_Produktbild" src="Produktbilder/Glühbirnen/glühbirne3.jpg"
-                                alt="Festplatte">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Amazon Basics LED-Leuchtmittel, Edison-Sockel E27, 7 W
-                                (entspricht 60-W-Glühbirne), nicht
-                                dimmbar, klares Filament, 2 Stück </h5>
-                            <ul class="list-group">
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-chevron-down"></i> 4.350
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">3000+ mal gekauft im letzten Monat</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="fs-4 bolder">7,95€</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14 lh-1"> Lieferung bis Donnerstag, 9. November GRATIS-Versand für
-                                        Bestellungen
-                                        ab 39,00 € und Versand durch Amazon
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">Andere Angebote</p>
-                                    <p class="font-14">5,47€ <a href="#" class="pe-auto">(18 gebrauchte und neue
-                                            Artikel)</a>
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <img class="Energieeffizienz" src="assets/img/Energieeffizienz_E.jpg"
-                                        alt="Energieeffizienz_E"><a href="#" class="pe-auto font-14">
-                                        Produktdatenblatt</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <a href="product.html" class="stretched-link"></a>
-                    </div>
+            <div class="row Produkt_Einkaufswagen_seite border-top border-bottom mt-2">
+                <img class="Produktbilder_Seitenleiste" src="Produktbilder/NAS.jpeg" alt="Festplatte">
+                <p class="text-center">69,99€</p>
+                <div class="col-6 p-0 m-1 align-items-center">
+                    <select class="form-select form-select-sm dropdown_sidebar font-11 p-0" aria-label="Menge:">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                    </select>
                 </div>
-                <div class="col p-1">
-                    <div class="card border-light-subtle">
-                        <div class="Produktbild-hoehe">
-                            <img class="Suche_Produktbild mx-auto d-block"
-                                src="Produktbilder/Glühbirnen/glühbirne1.jpg" alt="Festplatte">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Amazon Basics LED-Leuchtmittel, Edison-Sockel E27, 7 W
-                                (entspricht 60-W-Glühbirne), nicht
-                                dimmbar, klares Filament, 2 Stück </h5>
-                            <ul class="list-group">
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-chevron-down"></i> 4.350
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">3000+ mal gekauft im letzten Monat</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="fs-4 bolder">7,95€</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14 lh-1"> Lieferung bis Donnerstag, 9. November GRATIS-Versand für
-                                        Bestellungen
-                                        ab 39,00 € und Versand durch Amazon
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">Andere Angebote</p>
-                                    <p class="font-14">5,47€ <a href="#" class="pe-auto">(18 gebrauchte und neue
-                                            Artikel)</a>
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <img class="Energieeffizienz" src="assets/img/Energieeffizienz_E.jpg"
-                                        alt="Energieeffizienz_E"><a href="#" class="pe-auto font-14">
-                                        Produktdatenblatt</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col p-1">
-                    <div class="card border-light-subtle">
-                        <div class="Produktbild-hoehe">
-                            <img class="Suche_Produktbild mx-auto d-block"
-                                src="Produktbilder/Glühbirnen/glühbirne2.jpg" alt="Festplatte">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Amazon Basics LED-Leuchtmittel, Edison-Sockel E27, 7 W
-                                (entspricht 60-W-Glühbirne), nicht
-                                dimmbar, klares Filament, 2 Stück </h5>
-                            <ul class="list-group">
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-chevron-down"></i> 4.350
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">3000+ mal gekauft im letzten Monat</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="fs-4 bolder">7,95€</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14 lh-1"> Lieferung bis Donnerstag, 9. November GRATIS-Versand für
-                                        Bestellungen
-                                        ab 39,00 € und Versand durch Amazon
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">Andere Angebote</p>
-                                    <p class="font-14">5,47€ <a href="#" class="pe-auto">(18 gebrauchte und neue
-                                            Artikel)</a>
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <img class="Energieeffizienz" src="assets/img/Energieeffizienz_E.jpg"
-                                        alt="Energieeffizienz_E"><a href="#" class="pe-auto font-14">
-                                        Produktdatenblatt</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-none d-lg-block p-1">
-                    <div class="card border-light-subtle">
-                        <div class="Produktbild-hoehe">
-                            <img class="Suche_Produktbild mx-auto d-block"
-                                src="Produktbilder/Glühbirnen/glühbirne4.jpg" alt="Festplatte">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Amazon Basics LED-Leuchtmittel, Edison-Sockel E27, 7 W
-                                (entspricht 60-W-Glühbirne), nicht
-                                dimmbar, klares Filament, 2 Stück </h5>
-                            <ul class="list-group">
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-chevron-down"></i> 4.350
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">3000+ mal gekauft im letzten Monat</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="fs-4 bolder">7,95€</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14 lh-1"> Lieferung bis Donnerstag, 9. November GRATIS-Versand für
-                                        Bestellungen
-                                        ab 39,00 € und Versand durch Amazon
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">Andere Angebote</p>
-                                    <p class="font-14">5,47€ <a href="#" class="pe-auto">(18 gebrauchte und neue
-                                            Artikel)</a>
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <img class="Energieeffizienz" src="assets/img/Energieeffizienz_E.jpg"
-                                        alt="Energieeffizienz_E"><a href="#" class="pe-auto font-14">
-                                        Produktdatenblatt</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col d-none d-xl-block  p-1">
-                    <div class="card border-light-subtle">
-                        <div class="Produktbild-hoehe">
-                            <img class="Suche_Produktbild mx-auto d-block"
-                                src="Produktbilder/Glühbirnen/glühbirne5.jpg" alt="Festplatte">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Amazon Basics LED-Leuchtmittel, Edison-Sockel E27, 7 W
-                                (entspricht 60-W-Glühbirne), nicht
-                                dimmbar, klares Filament, 2 Stück </h5>
-                            <ul class="list-group">
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-chevron-down"></i> 4.350
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">3000+ mal gekauft im letzten Monat</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="fs-4 bolder">7,95€</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14 lh-1"> Lieferung bis Donnerstag, 9. November GRATIS-Versand für
-                                        Bestellungen
-                                        ab 39,00 € und Versand durch Amazon
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">Andere Angebote</p>
-                                    <p class="font-14">5,47€ <a href="#" class="pe-auto">(18 gebrauchte und neue
-                                            Artikel)</a>
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <img class="Energieeffizienz" src="assets/img/Energieeffizienz_E.jpg"
-                                        alt="Energieeffizienz_E"><a href="#" class="pe-auto font-14">
-                                        Produktdatenblatt</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="col-4 p-0 m-1 align-items-center">
+                    <button type="button" class="btn btn-light btn-sm">
+                        <i class="fa-sharp fa-regular fa-trash" style="color: #000000;"></i>
+                    </button>
                 </div>
             </div>
-            <div class="row mt-3">
-                <div class="col-12">
-                    <div class="fw-bold fs-5">Weitere Ergebnisse</div>
-                </div>
-            </div>
-            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
-                <div class="col p-1">
-                    <div class="card border-light-subtle">
-                        <div class="Produktbild-hoehe">
-                            <img class="Suche_Produktbild" src="Produktbilder/Glühbirnen/glühbirne6.jpg"
-                                alt="Festplatte">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Amazon Basics LED-Leuchtmittel, Edison-Sockel E27, 7 W
-                                (entspricht 60-W-Glühbirne), nicht
-                                dimmbar, klares Filament, 2 Stück </h5>
-                            <ul class="list-group">
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-chevron-down"></i> 4.350
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">3000+ mal gekauft im letzten Monat</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="fs-4 bolder">7,95€</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14 lh-1"> Lieferung bis Donnerstag, 9. November GRATIS-Versand für
-                                        Bestellungen
-                                        ab 39,00 € und Versand durch Amazon
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">Andere Angebote</p>
-                                    <p class="font-14">5,47€ <a href="#" class="pe-auto">(18 gebrauchte und neue
-                                            Artikel)</a>
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <img class="Energieeffizienz" src="assets/img/Energieeffizienz_E.jpg"
-                                        alt="Energieeffizienz_E"><a href="#" class="pe-auto font-14">
-                                        Produktdatenblatt</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col p-1">
-                    <div class="card border-light-subtle">
-                        <div class="Produktbild-hoehe">
-                            <img class="Suche_Produktbild" src="Produktbilder/Glühbirnen/glühbirne7.jpg"
-                                alt="Festplatte">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Amazon Basics LED-Leuchtmittel, Edison-Sockel E27, 7 W
-                                (entspricht 60-W-Glühbirne), nicht
-                                dimmbar, klares Filament, 2 Stück </h5>
-                            <ul class="list-group">
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-chevron-down"></i> 4.350
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">3000+ mal gekauft im letzten Monat</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="fs-4 bolder">7,95€</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14 lh-1"> Lieferung bis Donnerstag, 9. November GRATIS-Versand für
-                                        Bestellungen
-                                        ab 39,00 € und Versand durch Amazon
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">Andere Angebote</p>
-                                    <p class="font-14">5,47€ <a href="#" class="pe-auto">(18 gebrauchte und neue
-                                            Artikel)</a>
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <img class="Energieeffizienz" src="assets/img/Energieeffizienz_E.jpg"
-                                        alt="Energieeffizienz_E"><a href="#" class="pe-auto font-14">
-                                        Produktdatenblatt</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col p-1">
-                    <div class="card border-light-subtle">
-                        <div class="Produktbild-hoehe">
-                            <img class="Suche_Produktbild" src="Produktbilder/Glühbirnen/glühbirne8.jpg"
-                                alt="Festplatte">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Amazon Basics LED-Leuchtmittel, Edison-Sockel E27, 7 W
-                                (entspricht 60-W-Glühbirne), nicht
-                                dimmbar, klares Filament, 2 Stück </h5>
-                            <ul class="list-group">
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-chevron-down"></i> 4.350
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">3000+ mal gekauft im letzten Monat</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="fs-4 bolder">7,95€</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14 lh-1"> Lieferung bis Donnerstag, 9. November GRATIS-Versand für
-                                        Bestellungen
-                                        ab 39,00 € und Versand durch Amazon
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">Andere Angebote</p>
-                                    <p class="font-14">5,47€ <a href="#" class="pe-auto">(18 gebrauchte und neue
-                                            Artikel)</a>
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <img class="Energieeffizienz" src="assets/img/Energieeffizienz_E.jpg"
-                                        alt="Energieeffizienz_E"><a href="#" class="pe-auto font-14">
-                                        Produktdatenblatt</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col p-1">
-                    <div class="card border-light-subtle">
-                        <div class="Produktbild-hoehe">
-                            <img class="Suche_Produktbild" src="Produktbilder/Glühbirnen/glühbirne9.jpg"
-                                alt="Festplatte">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Amazon Basics LED-Leuchtmittel, Edison-Sockel E27, 7 W
-                                (entspricht 60-W-Glühbirne), nicht
-                                dimmbar, klares Filament, 2 Stück </h5>
-                            <ul class="list-group">
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-chevron-down"></i> 4.350
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">3000+ mal gekauft im letzten Monat</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="fs-4 bolder">7,95€</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14 lh-1"> Lieferung bis Donnerstag, 9. November GRATIS-Versand für
-                                        Bestellungen
-                                        ab 39,00 € und Versand durch Amazon
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">Andere Angebote</p>
-                                    <p class="font-14">5,47€ <a href="#" class="pe-auto">(18 gebrauchte und neue
-                                            Artikel)</a>
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <img class="Energieeffizienz" src="assets/img/Energieeffizienz_E.jpg"
-                                        alt="Energieeffizienz_E"><a href="#" class="pe-auto font-14">
-                                        Produktdatenblatt</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col p-1">
-                    <div class="card border-light-subtle">
-                        <div class="Produktbild-hoehe">
-                            <img class="Suche_Produktbild" src="Produktbilder/Glühbirnen/glühbirne10.jpg"
-                                alt="Festplatte">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Amazon Basics LED-Leuchtmittel, Edison-Sockel E27, 7 W
-                                (entspricht 60-W-Glühbirne), nicht
-                                dimmbar, klares Filament, 2 Stück </h5>
-                            <ul class="list-group">
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-chevron-down"></i> 4.350
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">3000+ mal gekauft im letzten Monat</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="fs-4 bolder">7,95€</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14 lh-1"> Lieferung bis Donnerstag, 9. November GRATIS-Versand für
-                                        Bestellungen
-                                        ab 39,00 € und Versand durch Amazon
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">Andere Angebote</p>
-                                    <p class="font-14">5,47€ <a href="#" class="pe-auto">(18 gebrauchte und neue
-                                            Artikel)</a>
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <img class="Energieeffizienz" src="assets/img/Energieeffizienz_E.jpg"
-                                        alt="Energieeffizienz_E"><a href="#" class="pe-auto font-14">
-                                        Produktdatenblatt</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col p-1">
-                    <div class="card border-light-subtle">
-                        <div class="Produktbild-hoehe">
-                            <img class="Suche_Produktbild" src="Produktbilder/Glühbirnen/glühbirne11.jpg"
-                                alt="Festplatte">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Amazon Basics LED-Leuchtmittel, Edison-Sockel E27, 7 W
-                                (entspricht 60-W-Glühbirne), nicht
-                                dimmbar, klares Filament, 2 Stück </h5>
-                            <ul class="list-group">
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-chevron-down"></i> 4.350
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">3000+ mal gekauft im letzten Monat</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="fs-4 bolder">7,95€</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14 lh-1"> Lieferung bis Donnerstag, 9. November GRATIS-Versand für
-                                        Bestellungen
-                                        ab 39,00 € und Versand durch Amazon
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">Andere Angebote</p>
-                                    <p class="font-14">5,47€ <a href="#" class="pe-auto">(18 gebrauchte und neue
-                                            Artikel)</a>
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <img class="Energieeffizienz" src="assets/img/Energieeffizienz_E.jpg"
-                                        alt="Energieeffizienz_E"><a href="#" class="pe-auto font-14">
-                                        Produktdatenblatt</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col p-1">
-                    <div class="card border-light-subtle">
-                        <div class="Produktbild-hoehe">
-                            <img class="Suche_Produktbild" src="Produktbilder/Glühbirnen/glühbirne12.jpg"
-                                alt="Festplatte">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">Amazon Basics LED-Leuchtmittel, Edison-Sockel E27, 7 W
-                                (entspricht 60-W-Glühbirne), nicht
-                                dimmbar, klares Filament, 2 Stück </h5>
-                            <ul class="list-group">
-                                <li class="list-unstyled">
-                                    <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
-                                        href="#">
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
-                                        <i class="fa-sharp fa-solid fa-chevron-down"></i> 4.350
-                                    </a>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">3000+ mal gekauft im letzten Monat</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="fs-4 bolder">7,95€</p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14 lh-1"> Lieferung bis Donnerstag, 9. November GRATIS-Versand für
-                                        Bestellungen
-                                        ab 39,00 € und Versand durch Amazon
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <p class="font-14">Andere Angebote</p>
-                                    <p class="font-14">5,47€ <a href="#" class="pe-auto">(18 gebrauchte und neue
-                                            Artikel)</a>
-                                    </p>
-                                </li>
-                                <li class="list-unstyled">
-                                    <img class="Energieeffizienz" src="assets/img/Energieeffizienz_E.jpg"
-                                        alt="Energieeffizienz_E"><a href="#" class="pe-auto font-14">
-                                        Produktdatenblatt</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
 
-            </div>
         </div>
     </div>
-    <amazon-footer></amazon-footer>
 </body>
 
 </html>

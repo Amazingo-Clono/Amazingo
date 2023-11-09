@@ -16,7 +16,7 @@
     <script src="assets/script.js" defer></script>
 </head>
 
-<body>
+<body">
     <amazon-navbar></amazon-navbar>
     <div id="test">
         <div id="width">
@@ -24,7 +24,7 @@
                 <div class="col-md-7" id="hinweis">
                     <div class="row">
                         <div class="col-2 justify-content-center my-auto">
-                            <img id="SEPA-icon" src="assets/img/SEPA-icon.jpeg" alt="SEPA">
+                            <img id="SEPA-icon" src="assets/img/SEPA-icon.jpeg" alt="SEPA" style="width: 90%;">
                         </div>
                         <div class="col-7">
                             <h5>Schnell und sicher bezahlen</h5>
@@ -43,7 +43,8 @@
                         href="#">
                         Auswahl aller Artikel entfernen
                     </a>
-                    <div class="row border-bottom border-top">
+                    <hr>
+                    <div class="row">
                         <div class="col-1 d-flex justify-content-center my-auto">
                             <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value=""
                                 aria-label="..." checked>
@@ -76,7 +77,7 @@
                                 <li class="list-unstyled">
                                     <div class="row">
                                         <div class="col-2">
-                                            <select class="form-select" aria-label="Small select example">
+                                            <select class="form-select-sm" aria-label="Small select example">
                                                 <option selected>Menge: </option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -87,25 +88,25 @@
                                             </select>
                                         </div>
                                         <div class="col-1 my-auto text-center">
-                                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover font-14"
                                                 href="#">
                                                 Löschen
                                             </a>
                                         </div>
                                         <div class="col-3 my-auto text-center">
-                                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover font-14"
                                                 href="#">
                                                 Auf die Merkliste
                                             </a>
                                         </div>
                                         <div class="col-3 my-auto text-center">
-                                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover font-14"
                                                 href="#">
                                                 Weitere Artikel wie diese
                                             </a>
                                         </div>
                                         <div class="col-1 my-auto text-center">
-                                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover"
+                                            <a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover font-14"
                                                 href="#">
                                                 Teilen
                                             </a>
@@ -114,7 +115,13 @@
                                 </li>
                             </ul>
                         </div>
+                        <div class="col-2">
+                            <div class="d-flex justify-content-end fs-5">
+                                <p class="fw-bolder"> 224,98 €</p>
+                            </div>
+                        </div>
                     </div>
+                    <hr>
                     <div class="row">
                         <div class="col-1 d-flex justify-content-center my-auto">
                             <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value=""
@@ -124,7 +131,6 @@
                             <img class="Produktbilder" src="Produktbilder/NAS.jpeg" alt="NAS">
                         </div>
                         <div class="col">
-
                             <h5>Synology NAS ohne Festplatte</h5>
                             <p>239,45€</p>
                             <p>Auf Lager</p>
@@ -161,6 +167,15 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-2">
+                            <div class="d-flex justify-content-end fs-5">
+                                <p class="fw-bolder"> 224,98 €</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-end fs-5">
+                        Zwischensumme (2 Artikel): <p class="fw-bolder"> 224,98 €</p>
                     </div>
                 </div>
                 <div class="col-2">
@@ -181,6 +196,6 @@
         </div>
     </div>
     <amazon-footer></amazon-footer>
-</body>
+    </body>
 
 </html>
