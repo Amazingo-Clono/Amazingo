@@ -1123,13 +1123,13 @@ function imageZoom(imgID, resultID) {
   result = document.getElementById(resultID);
   lens = new ElementBuilder("div").setClass("img-zoom-lens").element;
   img.parentElement.insertBefore(lens, img);
-  result.style.display = "none";
-  lens.style.display = "none";
   cx = result.offsetWidth / lens.offsetWidth;
   cy = result.offsetHeight / lens.offsetHeight;
-  result.style.backgroundImage = "url('" + img.src + "')";
-  result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+  result.style.display = "none";
+  lens.style.display = "none";
   img.addEventListener("mouseover", () => {
+    result.style.backgroundImage = "url('" + img.src + "')";
+    result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
     result.style.display = "block";
     lens.style.display = "block";
   })
@@ -1148,14 +1148,14 @@ function imageZoom(imgID, resultID) {
     pos = getCursorPos(e);
     x = pos.x - (lens.offsetWidth / 2);
     y = pos.y - (lens.offsetHeight / 2);
-    if (x > img.width - lens.offsetWidth)
-      x = img.width - lens.offsetWidth;
-    if (x < 0)
-      x = 0;
-    if (y > img.height - lens.offsetHeight) 
-      y = img.height - lens.offsetHeight;
-    if (y < 0)
-      y = 0;
+    // if (x > img.width - lens.offsetWidth)
+    //   x = img.width - lens.offsetWidth;
+    // if (x < 0)
+    //   x = 0;
+    // if (y > img.height - lens.offsetHeight) 
+    //   y = img.height - lens.offsetHeight;
+    // if (y < 0)
+    //   y = 0;
     lens.style.left = x + "px";
     lens.style.top = y + "px";
     result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";

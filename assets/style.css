@@ -266,14 +266,16 @@ blue-link > a {
 .img-zoom-lens {
     position: absolute;
     border: 1px solid #d4d4d4;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
 }
 
 #result-image-zoom {
     position: absolute;
     width: 500px;
     height: 500px;
+    z-index: 999;
+    background-repeat: no-repeat;
 }
 
 .sidebar-dropdown {
