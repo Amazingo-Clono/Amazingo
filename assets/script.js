@@ -208,7 +208,7 @@ class AmazonNavbar extends HTMLElement {
     },
     {
       title: "Hilfe & Einstellungen",
-      children: ["Mein Konto", "Deutsch", "Deutschland", "Waehrungseinstellungen", "Kundenservice", "Anmelden"]
+      children: ["Mein Konto", "Deutsch", "Deutschland", "Waehrungseinstellungen", "Kundenservice", "Abmelden", ""]
     }
   ]
   _userAccLink = [
@@ -357,43 +357,70 @@ class AmazonNavbar extends HTMLElement {
     const sideBar = new ElementBuilder("nav")
       .setClass("bg-white")
       .setId("sidebar");
-    sideBar
-      .addChild("div", "second-footer container py-2 px-4 text-white")
-      .setAttribute("style", "font-size: 19px;")
-      .setId("sidebarHeader")
-      .addChildAndForget("i", "fas fa-circle-user")
+    const headerText = new ElementBuilder("span");
+    headerText
+      .addChildAndForget("i", "fa-solid fa-circle-user")
       .addChild("span", "fw-bold ms-2")
       .setAttribute("style", "font-size: 20px;")
-      .setTextContent("Hallo, anmelden");
+      .setTextContent("Hallo, Thomas");
+    sideBar
+      .addChild("div", "second-footer container py-2 px-4 text-white d-flex flex-row justify-content-between")
+      .addBuilderAsChild(headerText)
+      .setAttribute("style", "font-size: 20px;")
+      .setId("sidebarHeader")
+      .addChild("button", "btn text-white")
+      .addChild("i", "fax fa-close align-self-center")
+      .setAttribute("onclick", "document.getElementById('sidebar').classList.toggle('active')");
     const sideBarContent = sideBar
       .addChild("div", "overflow-scroll h-100");
-    const subMenu = ({title, children, subDirs, more}) => {
+    const subMenuFn = ({title, children, subDirs, more}) => {
       sideBarContent
-        .addChildAndForget("hr")
         .addChild("h6", "container fw-bold ms-3")
         .setTextContent(title);
-      const addLink = (text, subMenu) => {
-        const link = sideBarContent
-          .addChild("div", "w-90 font-14")
-          .addChild("a", "text-black text-decoration-none text-start")
-          .setAttribute("href", "#")
-          .addChild("div", "d-flex flex-row justify-content-between")
+      const addLink = (text, children) => {
+        const wrapper = sideBarContent
+          .addChild("div", `font-14 px-4 w-100 ${children ? "dropdown" : ""}`)
+        const link = wrapper
+          .addChild("a", `w-100 btn btn-light text-black text-decoration-none text-start ${children ? "dropdown-toggle" : ""}`)
+          .setAttribute("href", "#");
+        link
+          .addChild("div", "w-100")
+          .setAttribute("style", "display:inline-block;")
           .setTextContent(text);
-        if (subMenu)
-          link.addChild("i", "fas fa-angle-right");
+        if (children) {
+          link
+            .setAttribute("data-bs-toggle", "dropdown");
+          const menu = wrapper
+            .addChild("div", "dropdown-menu sidebar-dropdown");
+          children.forEach(({title, children}) => {
+            menu
+              .addChild("h4", "fw-bold mx-3")
+              .setTextContent(title);
+            children.forEach(text => {
+              menu
+                .addChild("a", "w-100 btn btn-light text-black text-decoration-none text-start")
+                .setTextContent(text);
+            });
+            menu
+              .addChild("hr", "my-2");
+          });
+        }
       };
-      if (subDirs)
-        subDirs.forEach(({title}) => addLink(title, true));
+      if (subDirs != undefined) {
+        subDirs.forEach(({title, subMenu}) => addLink(title, subMenu));
+      }
       if (children)
-        children.forEach((text) => addLink(text, false));
+        children.forEach((text) => addLink(text));
       if (more) {
         sideBarContent.addChild("hr");
-        more.forEach(({title, subMenu}) => addLink(title, !!subMenu));
+        more.forEach(({title, subDirs}) => addLink(title, subDirs));
       }
+      sideBarContent
+        .addChild("hr");
     }
 
     this._sideBar.forEach((stuff) => {
-      subMenu(stuff);
+      subMenuFn(stuff);
     });
     const navbarWrapper = new ElementBuilder("div");
     navbarWrapper.addBuilderAsChild(new ElementBuilder("nav")
@@ -836,28 +863,21 @@ class ProductTopCategories extends HTMLElement {
     title: "Angebote",
   }, {
     title: "Laptops",
-    children: []
   }, {
     title: "Tablets",
-    children: []
   }, {
     title: "Desktop-PCs",
-    children: []
+    children: ["Gaming-PCs", "Office-PCs", "All-in-One-PCs", "Mini-PCs"]
   }, {
     title: "Gaming-PCs",
-    children: []
   }, {
     title: "Computer-Zubehoer",
-    children: []
   }, {
     title: "Komponenten",
-    children: []
   }, {
     title: "Monitore",
-    children: []
   }, {
     title: "Drucker",
-    children: []
   }, {
     title: "Bestsellter",
   }, {
@@ -875,12 +895,11 @@ class ProductTopCategories extends HTMLElement {
       .setClass("container-fluid border-bottom border-2 align-items-center d-flex flex-row justify-content-start")
       .setId("product-top-categories");
     this._categories.forEach(({title, children}, index) => {
-      const link = wrapper
-        .addChild("a", `mx-3 my-2 text-decoration-none text-black font-14 text-nowrap ${index === 0 ? "fw-bold" : ""}`)
+      wrapper
+        .addChild("a", `mx-3 my-2 onhover-underlined onhover-orange text-decoration-none text-black font-14 text-nowrap ${index === 0 ? "fw-bold" : ""}`)
         .setAttribute("href", "#")
+        .setAttribute("data-bs-toggle", "dropdown")
         .setTextContent(title);
-      if (children)
-        link.addChild("i", "fa fa-caret-down ps-1")
     });
     wrapper.attach(self);
   }
@@ -1102,57 +1121,63 @@ function imageZoom(imgID, resultID) {
   let img, lens, result, cx, cy;
   img = document.getElementById(imgID);
   result = document.getElementById(resultID);
-  lens = document.createElement("div");
-  lens.setAttribute("class", "img-zoom-lens");
+  lens = new ElementBuilder("div").setClass("img-zoom-lens").element;
   img.parentElement.insertBefore(lens, img);
-  /* Calculate the ratio between result DIV and lens: */
+  result.style.display = "none";
+  lens.style.display = "none";
   cx = result.offsetWidth / lens.offsetWidth;
   cy = result.offsetHeight / lens.offsetHeight;
-  /* Set background properties for the result DIV */
   result.style.backgroundImage = "url('" + img.src + "')";
   result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
-  /* Execute a function when someone moves the cursor over the image, or the lens: */
+  img.addEventListener("mouseover", () => {
+    result.style.display = "block";
+    lens.style.display = "block";
+  })
+  img.addEventListener("mouseout", () => {
+    result.style.display = "none";
+    lens.style.display = "none";
+  })
   lens.addEventListener("mousemove", moveLens);
   img.addEventListener("mousemove", moveLens);
-  /* And also for touch screens: */
   lens.addEventListener("touchmove", moveLens);
   img.addEventListener("touchmove", moveLens);
+
   function moveLens(e) {
-    var pos, x, y;
-    /* Prevent any other actions that may occur when moving over the image */
+    let pos, x, y;
     e.preventDefault();
-    /* Get the cursor's x and y positions: */
     pos = getCursorPos(e);
-    /* Calculate the position of the lens: */
     x = pos.x - (lens.offsetWidth / 2);
     y = pos.y - (lens.offsetHeight / 2);
-    /* Prevent the lens from being positioned outside the image: */
-    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
-    if (x < 0) {x = 0;}
-    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
-    if (y < 0) {y = 0;}
-    /* Set the position of the lens: */
+    if (x > img.width - lens.offsetWidth)
+      x = img.width - lens.offsetWidth;
+    if (x < 0)
+      x = 0;
+    if (y > img.height - lens.offsetHeight) 
+      y = img.height - lens.offsetHeight;
+    if (y < 0)
+      y = 0;
     lens.style.left = x + "px";
     lens.style.top = y + "px";
-    /* Display what the lens "sees": */
     result.style.backgroundPosition = "-" + (x * cx) + "px -" + (y * cy) + "px";
   }
+
   function getCursorPos(e) {
-    var a, x = 0, y = 0;
+    let a;
+    let x = 0, y = 0;
     e = e || window.event;
-    /* Get the x and y positions of the image: */
     a = img.getBoundingClientRect();
-    /* Calculate the cursor's x and y coordinates, relative to the image: */
     x = e.pageX - a.left;
     y = e.pageY - a.top;
-    /* Consider any page scrolling: */
     x = x - window.pageXOffset;
     y = y - window.pageYOffset;
-    return {x : x, y : y};
+    return {
+      x: x, 
+      y: y
+    };
   }
-} 
+}
 
 (() => {
   registerCustomElements([AmazonNavbar, AmazonFooter, DisplayData, searchProduct, checkboxLink, ProductTopCategories, CategoryTree, ProductContainer, ContainerRoundedBorder, BlueLink, StarsBewertung]);
-  setTimeout(() => imageZoom("image-preview", "result-image-zoom"), 3000); 
+  setTimeout(() => imageZoom("image-preview", "result-image-zoom"), 100); 
 })();

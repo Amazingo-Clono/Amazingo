@@ -74,6 +74,10 @@ blue-link.font-12 > a{
     font-size: 12px !important;
 }
 
+blue-link > a {
+    color: #007185 !important;
+}
+
 .font-10 {
     font-size: 10px !important;
 }
@@ -259,16 +263,18 @@ blue-link.font-12 > a{
 } 
 
 .img-zoom-lens {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  /*set the size of the lens:*/
-  width: 40px;
-  height: 40px;
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    width: 100px;
+    height: 100px;
 }
 
 #result-image-zoom {
-  border: 1px solid #d4d4d4;
-  /*set the size of the result div:*/
-  width: 300px;
-  height: 300px;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+}
+
+.sidebar-dropdown {
+    transform: translateX(300px);
 }

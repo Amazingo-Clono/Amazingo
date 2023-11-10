@@ -15,168 +15,336 @@
 </head>
 
 <body>
-    <amazon-navbar></amazon-navbar>
-    <product-top-categories></product-top-categories>
-    <category-tree></category-tree>
-    <product-container>
-        <div class="col-4">
-            <div class="row">
-                <div class="col-1">
-                    <!-- <div style="height: 100px; width: 50px;">
-                        <img src="ProductPagePictures/NAS1.jpg" alt="">
+    <div class="parent">
+        <div class="leftdiv pe-0">
+            <amazon-navbar></amazon-navbar>
+            <product-top-categories></product-top-categories>
+            <category-tree></category-tree>
+            <product-container>
+                <div class="col-4">
+                    <div class="row">
+                        <div class="col-2">
+                            <img class="my-2" src="ProductPagePictures/NAS1.jpg" alt="" style="width: 100%; height: auto;" onclick="imgClick(this);">
+                            <img class="my-2" src="ProductPagePictures/NAS2.jpg" alt="" style="width: 100%; height: auto;" onclick="imgClick(this);">
+                            <img class="my-2" src="ProductPagePictures/NAS3.jpg" alt="" style="width: 100%; height: auto;" onclick="imgClick(this);">
+                            <img class="my-2" src="ProductPagePictures/NAS4.jpg" alt="" style="width: 100%; height: auto;" onclick="imgClick(this);">
+                        </div>
+                        <div class="col-10">
+                            <img id="image-preview" src="ProductPagePictures/NAS1.jpg" alt="" style="width: 100%; height: auto;">
+                        </div>
                     </div>
-                    <div style="height: 100px; width: 50px;">
-                        <img src="ProductPagePictures/NAS2.jpg" alt="">
-                    </div>
-                    <div style="height: 100px; width: 50px;">
-                        <img src="ProductPagePictures/NAS3.jpg" alt="">
-                    </div>
-                    <div style="height: 100px; width: 50px;">
-                        <img src="ProductPagePictures/NAS4.jpg" alt="">
-                    </div> -->
                 </div>
-                <div class="col-11">
-                    <img id="image-preview" src="ProductPagePictures/NAS1.jpg" alt="" style="width: 100%; height: auto;">
+                <div class="col-5 font-14">
                     <div id="result-image-zoom"></div>
+                    <h4>Synology D5223 2-Bay Diskstation NAS (Realtek RTD1619B) Quad-Core 2GB Ram 1xRJ-45 1GbE LAN-Port</h4>
+                    <div>
+                        <blue-link text="Besuche den Synology-Store"></blue-link>
+                    </div>
+                    <div>
+                        <div class="dropdown_Stars">
+                            <span>
+                                <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                                <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                                <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                                <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                                <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
+                            </span>
+                            <div class="dropdown_content_Stars">
+                                <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                                <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                                <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                                <i class="fa-sharp fa-solid fa-star" style="color: #ffd11a;"></i>
+                                <i class="fa-sharp fa-regular fa-star" style="color: #ffd11a;"></i>
+                                4,6 von 5
+                                <p class="font-14">4.354 globale Bewertungen</p>
+                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                    href="#">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p>5 Sterne</p>
+                                        </div>
+                                        <div class="col">
+                                            <div class="progress" role="progressbar"
+                                                aria-label="Warning example" aria-valuenow="100"
+                                                aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar bg-warning"
+                                                    style="width: 71%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <p>71%</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                    href="#">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p>4 Sterne</p>
+                                        </div>
+                                        <div class="col">
+                                            <div class="progress col" role="progressbar"
+                                                aria-label="Warning example" aria-valuenow="75"
+                                                aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar bg-warning"
+                                                    style="width: 19%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <p>19%</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                    href="#">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p>3 Sterne</p>
+                                        </div>
+                                        <div class="col">
+                                            <div class="progress col" role="progressbar"
+                                                aria-label="Warning example" aria-valuenow="75"
+                                                aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar bg-warning"
+                                                    style="width: 5%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <p>5%</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                    href="#">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p>2 Sterne</p>
+                                        </div>
+                                        <div class="col">
+                                            <div class="progress col" role="progressbar"
+                                                aria-label="Warning example" aria-valuenow="75"
+                                                aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar bg-warning"
+                                                    style="width: 2%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <p>2%</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                                    href="#">
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p>1 Sterne</p>
+                                        </div>
+                                        <div class="col">
+                                            <div class="progress col" role="progressbar"
+                                                aria-label="Warning example" aria-valuenow="75"
+                                                aria-valuemin="0" aria-valuemax="100">
+                                                <div class="progress-bar bg-warning"
+                                                    style="width: 2%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">
+                                            <p>2%</p>
+                                        </div>
+                                    </div>
+                                </a>
+                                <hr>
+                                <div class="d-flex justify-content-center p-0 m-0">
+                                    <blue-link text="Bewertungen anzeigen"></blue-link>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="orangeLink link-offset-2 link-underline link-underline-opacity-0 font-14"
+                            href="#">
+                            <i class="fa-sharp fa-solid fa-chevron-down"></i> 4.350
+                        </a>
+                    </div>
+                    <div>
+                        Amazon Tipps fuer "<blue-link text="synology ds223"></blue-link>"
+                    </div>
+                    <hr class="mt-1"/>
+                    <div>
+                        <h4><span class="text-danger">-12 %</span><span><span> 269</span><sup class="font-14">00 Euro</sup></h4>
+                    </div>
+                    <div class="align-items-center font-12 text-secondary py-2 text-nowrap">
+                        UVP: <span class="text-decoration-line-through">304,90 Euro</span><i class="fa fa-circle-info ms-1"></i>
+                    </div>
+                    <div>
+                        <blue-link text="KOSTENFREIE Retouren"><i class="fa fa-chevron-down"></i></blue-link>
+                    </div>
+                    <div>
+                        Preisangaben inkl. USt. Abhaengig von der Lieferadresse kann die USt. an der Kasse variieren <blue-link text="Weitere Informationen."></blue-link>
+                    </div>
+                    <div class="my-3">
+                        <blue-link text="Moechtest du dein Elektro- oder Elektronikgeraet kostenlos recyceln?"></blue-link>
+                    </div>
+                    <div class="my-2">
+                        <span><span class="fw-bold">Spezifische Verwendungsmoeglichkeiten fuer Produkt:</span> Alltagsgebrauch</span>
+                    </div>
+                    <div class="my-2">
+                        <span class="fw-bold">Marke:</span> Synology 
+                    </div>
+                    <div class="my-2">
+                        <span class="fw-bold">Betriebssystem:</span> Synology 
+                    </div>
+                    <div class="my-2">
+                        <span class="fw-bold">Speicherkapazitaet:</span> Synology 
+                    </div>
+                    <div class="my-2">
+                        <span class="fw-bold">Groessse des installierten RAM-Speichers:</span> 2 GB
+                    </div>
+                    <div class="my-2">
+                        <span class="fw-bold">Modellname:</span> DS223
+                    </div>
+                    <div class="text-nowrap">
+                        <i class="fa fa-chevron-down"></i><blue-link text="Mehr anzeigen"></blue-link>
+                    </div>
+                    <hr/>
+                    <h6 class="fw-bold">Info zu diesem Artikel</h6>
+                    <ul>
+                        <li>Synology D5223 2-Bay Diskstation NAS (Realtek RTD16198B Quad-Core 2GB Ram TxRJ-45 GbE LAN-Port)</li>
+                    </ul>
+                    <div class="text-nowrap">
+                        <i class="fa fa-chevron-right"></i><blue-link text="Weitere Produktdetails"></blue-link>
+                    </div>
+                    <div class="mt-2 text-nowrap">
+                        <i class="fa fa-regular fa-comment"></i><blue-link text="Weitere Produktdetails"></blue-link>
+                    </div>
                 </div>
-            </div>
+                <div class="col-3 font-14">
+                    <container-rounded-border>
+                        <div>
+                            <h4>269<sup class="font-14">00 Euro</sup></h4>
+                        </div>
+                        <div>
+                            <blue-link text="KOSTENFREIE Retouren"><i class="fa fa-chevron-down"></i></blue-link>
+                        </div>
+                        <div class="my-2">
+                            <blue-link text="GRATIS Lieferung"></blue-link> Samstag, 21. Oktober
+                        </div>
+                        <div>
+                            Oder schnellste Lieferung <span class="fw-bold">Freitag, 20. Oktober.</span> Bestellung innerhalb <span class="text-success">12 Stdn. 37 Min.</span>
+                        </div>
+                        <div class="my-2">
+                            <i class="fa fa-regular fa-location-dot"></i> <blue-link text="Liefern an Thomas - 84082 Laberweinting"></blue-link>
+                        </div>
+                        <div class="h5 text-success">Auf Lager</div>
+                        <div class="text-nowrap">
+                            <label for="menge">Menge:</label>
+                            <select class="form-select" aria-label="select menge" id="menge">
+                                <option selected value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">3</option>
+                                <option value="5">3</option>
+                                <option value="6">3</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button class="btn btn-warning w-100 mt-2 rounded">in den Einkaufswagen</button>
+                        </div>
+                        <div>
+                            <button class="btn btn-warning w-100 my-2 rounded" style="background-color: #ffa41c">Jetzt kaufen</button>
+                        </div>
+                        <div>
+                            <div style="width: 50%; display:inline-block;">Versand</div>Amazon
+                        </div>
+                        <div>
+                            <div style="width: 50%; display:inline-block;">Verkaeufer</div>Amazon
+                        </div>
+                        <div>
+                            <div style="width: 50%; display:inline-block;">Rueckgaben</div><div sytle="width: 50%;"><blue-link text="Retournierbar innerhalb von 30 Tagen nach Erhalt"></blue-link></div>
+                        </div>
+                        <div>
+                            <div style="width: 50%; display:inline-block;">Verpackung</div><div sytle="width: 50%;"><blue-link text="Der Inhalt ist sichtbar."></blue-link></div>
+                        </div>
+                        <div>
+                            <i class="fa fa-chevron-down"></i><blue-link text="Mehr anzeigen"></blue-link>
+                        </div>
+                        <div>
+                            <input type="checkbox" name="geschenkoption" id="geschenkoption">
+                            <label for="geschenkoption">Geschenkoption hinzufuegen</label>
+                        </div>
+                        <hr/>
+                        <button class="btn btn-outline-dark w-100">Auf die Liste</button>
+                    </container-rounded-border>
+                    <container-rounded-border>
+                        <div class="font-14 fw-bold w-100 text-center">Zubehoer hinzufuegen</div>
+                        <hr class="my-1"/>
+                        <div>
+                            <blue-link text="Norton 360 2022 | Deluxe | 3 Geraete | 1 Benutzer | 1 Jahr - kontinuierlicher Schutz (auto..."></blue-link>
+                        </div>
+                        <div class="d-flex flex-row justify-content-between align-items-center">
+                            15,99 Euro <button class="btn btn-warning">In den Einkaufswagen</button>
+                        </div>
+                    </container-rounded-border>
+                    <container-rounded-border>
+                        <div class="d-flex flex-row align-items-center justify-content-center">
+                            <span>Neu & Gebraucht (40) von 267<sup>00 Euro</sup><span class="fw-bold"> Kostenlose Lieferung.</span></span>
+                            <i class="fa fa-chevron-right"></i>
+                        </div>
+                    </container-rounded-border>
+                </div>
+            </product-container>
+            <amazon-footer></amazon-footer>
         </div>
-        <div class="col-5 font-14">
-            <h4>Synology D5223 2-Bay Diskstation NAS (Realtek RTD1619B) Quad-Core 2GB Ram 1xRJ-45 1GbE LAN-Port</h4>
-            <div>
-                <blue-link text="Besuche den Synology-Store"></blue-link>
+        <div class="rightdiv border p-3">
+            <div class="row">
+                <p class="text-center font-12 mt-3">Zwischensumme</p>
+                <p class="text-center fw-bolder text-danger mb-0 mt-0">298,99€</p>
+                <p class="text-center font-11 text-success ">Deine Bestellung qualifiziert sich für GRATIS
+                    Standardversand.
+                    Details</p>
+                <a href="warenkorb.html" class="btn btn-outline-dark p-1" tabindex="-1" role="button"
+                    style="width: 100%; font-size: 11px;">Zum
+                    Einkaufswagen</a>
             </div>
-            <div>
-                <stars-bewertung sterne="1.2"></stars-bewertung>
-            </div>
-            <div>
-                Amazon Tipps fuer "<blue-link text="synology ds223"></blue-link>"
-            </div>
-            <hr class="mt-1"/>
-            <div>
-                <h4><span class="text-danger">-12 %</span><span><span> 269</span><sup class="font-14">00 Euro</sup></h4>
-            </div>
-            <div class="align-items-center font-12 text-secondary py-2 text-nowrap">
-                UVP: <span class="text-decoration-line-through">304,90 Euro</span><i class="fa fa-circle-info ms-1"></i>
-            </div>
-            <div>
-                <blue-link text="KOSTENFREIE Retouren"><i class="fa fa-chevron-down"></i></blue-link>
-            </div>
-            <div>
-                Preisangaben inkl. USt. Abhaengig von der Lieferadresse kann die USt. an der Kasse variieren <blue-link text="Weitere Informationen."></blue-link>
-            </div>
-            <div class="my-3">
-                <blue-link text="Moechtest du dein Elektro- oder Elektronikgeraet kostenlos recyceln?"></blue-link>
-            </div>
-            <div class="my-2">
-                <span><span class="fw-bold">Spezifische Verwendungsmoeglichkeiten fuer Produkt:</span> Alltagsgebrauch</span>
-            </div>
-            <div class="my-2">
-                <span class="fw-bold">Marke:</span> Synology 
-            </div>
-            <div class="my-2">
-                <span class="fw-bold">Betriebssystem:</span> Synology 
-            </div>
-            <div class="my-2">
-                <span class="fw-bold">Speicherkapazitaet:</span> Synology 
-            </div>
-            <div class="my-2">
-                <span class="fw-bold">Groessse des installierten RAM-Speichers:</span> 2 GB
-            </div>
-            <div class="my-2">
-                <span class="fw-bold">Modellname:</span> DS223
-            </div>
-            <div class="text-nowrap">
-                <i class="fa fa-chevron-down"></i><blue-link text="Mehr anzeigen"></blue-link>
-            </div>
-            <hr/>
-            <h6 class="fw-bold">Info zu diesem Artikel</h6>
-            <ul>
-                <li>Synology D5223 2-Bay Diskstation NAS (Realtek RTD16198B Quad-Core 2GB Ram TxRJ-45 GbE LAN-Port)</li>
-            </ul>
-            <div class="text-nowrap">
-                <i class="fa fa-chevron-right"></i><blue-link text="Weitere Produktdetails"></blue-link>
-            </div>
-            <div class="mt-2 text-nowrap">
-                <i class="fa fa-regular fa-comment"></i><blue-link text="Weitere Produktdetails"></blue-link>
-            </div>
-        </div>
-        <div class="col-3 font-14">
-            <container-rounded-border>
-                <div>
-                    <h4>269<sup class="font-14">00 Euro</sup></h4>
-                </div>
-                <div>
-                    <blue-link text="KOSTENFREIE Retouren"><i class="fa fa-chevron-down"></i></blue-link>
-                </div>
-                <div class="my-2">
-                    <blue-link text="GRATIS Lieferung"></blue-link> Samstag, 21. Oktober
-                </div>
-                <div>
-                    Oder schnellste Lieferung <span class="fw-bold">Freitag, 20. Oktober.</span> Bestellung innerhalb <span class="text-success">12 Stdn. 37 Min.</span>
-                </div>
-                <div class="my-2">
-                    <i class="fa fa-regular fa-location-dot"></i> <blue-link text="Liefern an Thomas - 84082 Laberweinting"></blue-link>
-                </div>
-                <div class="h5 text-success">Auf Lager</div>
-                <div class="text-nowrap">
-                    <label for="menge">Menge:</label>
-                    <select class="form-select" aria-label="select menge" id="menge">
-                        <option selected value="1">1</option>
+            <div class="row Produkt_Einkaufswagen_seite border-top mt-2">
+                <img class="Produktbilder_Seitenleiste" src="Produktbilder/Festplatte.jpeg" alt="Festplatte">
+                <p class="text-center">69,99€</p>
+                <div class="col-6 align-items-center">
+                    <select class="form-select form-select-sm font-14 p-1" aria-label="Menge:" style="width: 50px;">
+                        <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                        <option value="4">3</option>
-                        <option value="5">3</option>
-                        <option value="6">3</option>
+                        <option value="3">4</option>
                     </select>
                 </div>
-                <div>
-                    <button class="btn btn-warning w-100 mt-2 rounded">in den Einkaufswagen</button>
+                <div class="col-4 align-items-center">
+                    <button type="button" class="btn btn-light btn-sm">
+                        <i class="fa-sharp fa-regular fa-trash" style="color: #000000;"></i>
+                    </button>
                 </div>
-                <div>
-                    <button class="btn btn-warning w-100 my-2 rounded">Jetzt kaufen</button>
+            </div>
+            <div class="row Produkt_Einkaufswagen_seite border-top border-bottom mt-2">
+                <img class="Produktbilder_Seitenleiste" src="Produktbilder/NAS.jpeg" alt="Festplatte">
+                <p class="text-center">229,00€</p>
+                <div class="col-6 align-items-center">
+                    <select class="form-select form-select-sm font-14 p-1" aria-label="Menge:" style="width: 50px;">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="3">4</option>
+                    </select>
                 </div>
-                <div>
-                    <div style="width: 50%; display:inline-block;">Versand</div>Amazon
+                <div class="col-4 align-items-center">
+                    <button type="button" class="btn btn-light btn-sm mb-2">
+                        <i class="fa-sharp fa-regular fa-trash" style="color: #000000;"></i>
+                    </button>
                 </div>
-                <div>
-                    <div style="width: 50%; display:inline-block;">Verkaeufer</div>Amazon
-                </div>
-                <div>
-                    <div style="width: 50%; display:inline-block;">Rueckgaben</div><div sytle="width: 50%;"><blue-link text="Retournierbar innerhalb von 30 Tagen nach Erhalt"></blue-link></div>
-                </div>
-                <div>
-                    <div style="width: 50%; display:inline-block;">Verpackung</div><div sytle="width: 50%;"><blue-link text="Der Inhalt ist sichtbar."></blue-link></div>
-                </div>
-                <div>
-                    <i class="fa fa-chevron-down"></i><blue-link text="Mehr anzeigen"></blue-link>
-                </div>
-                <div>
-                    <input type="checkbox" name="geschenkoption" id="geschenkoption">
-                    <label for="geschenkoption">Geschenkoption hinzufuegen</label>
-                </div>
-                <hr/>
-                <button class="btn btn-outline-dark w-100">Auf die Liste</button>
-            </container-rounded-border>
-            <container-rounded-border>
-                <div class="font-14 fw-bold w-100 text-center">Zubehoer hinzufuegen</div>
-                <hr class="my-1"/>
-                <div>
-                    <blue-link text="Norton 360 2022 | Deluxe | 3 Geraete | 1 Benutzer | 1 Jahr - kontinuierlicher Schutz (auto..."></blue-link>
-                </div>
-                <div class="d-flex flex-row justify-content-between align-items-center">
-                    15,99 Euro <button class="btn btn-warning">In den Einkaufswagen</button>
-                </div>
-            </container-rounded-border>
-            <container-rounded-border>
-                <div class="d-flex flex-row align-items-center justify-content-center">
-                    <span>Neu & Gebraucht (40) von 267<sup>00 Euro</sup><span class="fw-bold"> Kostenlose Lieferung.</span></span>
-                    <i class="fa fa-chevron-right"></i>
-                </div>
-            </container-rounded-border>
+            </div>
         </div>
-    </product-container>
-    <amazon-footer></amazon-footer>
+    </div>
+    <script type="text/javascript">
+        function imgClick(e) {
+            const img = document.getElementById("image-preview");
+            img.setAttribute("src", e.getAttribute("src"));
+        }
+    </script>
 </body>
 
 </html>
