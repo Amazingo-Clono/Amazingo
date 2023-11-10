@@ -224,6 +224,7 @@ blue-link > a {
 
 .rightdiv {
     float: right;
+    width: 160px;
 }
 
 .stars {
